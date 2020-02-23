@@ -1,0 +1,9 @@
+use_frameworks!
+
+target 'TFInvest' do
+  pod 'AuthFramework', :path => '../Frameworks/AuthFramework/'
+  pod 'R.swift'
+  pod 'SwiftLint'
+  # Pods for TFInvest
+
+end
