@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		163472EC22E6B8A9FD7BCCC9 /* Pods_TFInvest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169990AB1F566B9FD1B4F591 /* Pods_TFInvest.framework */; };
 		7470CC3624030F4E00A91746 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7470CC3524030F4E00A91746 /* AppDelegate.swift */; };
 		7470CC3824030F4E00A91746 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7470CC3724030F4E00A91746 /* SceneDelegate.swift */; };
 		7470CC3A24030F4E00A91746 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7470CC3924030F4E00A91746 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		169990AB1F566B9FD1B4F591 /* Pods_TFInvest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFInvest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7470CC3224030F4E00A91746 /* TFInvest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TFInvest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7470CC3524030F4E00A91746 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7470CC3724030F4E00A91746 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		7470CC3E24030F4F00A91746 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7470CC4124030F4F00A91746 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7470CC4324030F4F00A91746 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C8184AD9BC46E9D617937E3 /* Pods-TFInvest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFInvest.release.xcconfig"; path = "Target Support Files/Pods-TFInvest/Pods-TFInvest.release.xcconfig"; sourceTree = "<group>"; };
+		B1E03ED6E19C417A73567EB4 /* Pods-TFInvest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFInvest.debug.xcconfig"; path = "Target Support Files/Pods-TFInvest/Pods-TFInvest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				163472EC22E6B8A9FD7BCCC9 /* Pods_TFInvest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1EA3F9AE39CCDA0D6246226B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B1E03ED6E19C417A73567EB4 /* Pods-TFInvest.debug.xcconfig */,
+				7C8184AD9BC46E9D617937E3 /* Pods-TFInvest.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		245960C63A9BA537E5E7D7E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				169990AB1F566B9FD1B4F591 /* Pods_TFInvest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7470CC2924030F4E00A91746 = {
 			isa = PBXGroup;
 			children = (
 				7470CC3424030F4E00A91746 /* TFInvest */,
 				7470CC3324030F4E00A91746 /* Products */,
+				1EA3F9AE39CCDA0D6246226B /* Pods */,
+				245960C63A9BA537E5E7D7E3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7470CC4624030F4F00A91746 /* Build configuration list for PBXNativeTarget "TFInvest" */;
 			buildPhases = (
+				8D358F11DCDF7CBD540C85FC /* [CP] Check Pods Manifest.lock */,
 				7470CC2E24030F4E00A91746 /* Sources */,
 				7470CC2F24030F4E00A91746 /* Frameworks */,
 				7470CC3024030F4E00A91746 /* Resources */,
+				20BF838DDA817CF22CB39876 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		20BF838DDA817CF22CB39876 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TFInvest/Pods-TFInvest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TFInvest/Pods-TFInvest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TFInvest/Pods-TFInvest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D358F11DCDF7CBD540C85FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TFInvest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7470CC2E24030F4E00A91746 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		7470CC4724030F4F00A91746 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1E03ED6E19C417A73567EB4 /* Pods-TFInvest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +370,7 @@
 		};
 		7470CC4824030F4F00A91746 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C8184AD9BC46E9D617937E3 /* Pods-TFInvest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
