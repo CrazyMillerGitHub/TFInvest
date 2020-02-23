@@ -1,0 +1,29 @@
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+- Pods
+- R.generated.swift
+line_length: 200
+custom_rules:
+    open_iboutlets:
+        included: ".*.swift"
+        name: "IBOutlet opening"
+        regex: '@IBOutlet ?(weak){0,1} var'
+        message: "IBOutlet should be private"
+        severity: error
+    open_ibaction:
+        included: ".*.swift"
+        name: "IBAction opening"
+        regex: '@IBAction func'
+        message: "IBAction should be private"
+        severity: error
+    image_name_initialization:
+        included: ".*.swift"
+        name: "Image initialization without R.swift"
+        regex: 'UIImage\(named:[^)]+\)'
+        message: "Use R.image.name() or typealias of this instead"
+        severity: error
+    localized_string_inizilization:
+        included: ".*.swift"
+        name: "Localizide string without R.swift"
+        regex: "NSLocalizedString"
+        message: "Use R.string.name() or typealias of this instead"
+        severity: error

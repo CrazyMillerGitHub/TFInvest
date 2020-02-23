@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -48,7 +48,6 @@
 				B1E03ED6E19C417A73567EB4 /* Pods-TFInvest.debug.xcconfig */,
 				7C8184AD9BC46E9D617937E3 /* Pods-TFInvest.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -104,6 +103,7 @@
 				7470CC2F24030F4E00A91746 /* Frameworks */,
 				7470CC3024030F4E00A91746 /* Resources */,
 				20BF838DDA817CF22CB39876 /* [CP] Embed Pods Frameworks */,
+				7470CC49240310A600A91746 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -177,6 +177,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TFInvest/Pods-TFInvest-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		7470CC49240310A600A91746 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		8D358F11DCDF7CBD540C85FC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
