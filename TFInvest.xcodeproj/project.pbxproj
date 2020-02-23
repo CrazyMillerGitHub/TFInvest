@@ -14,6 +14,7 @@
 		7470CC3D24030F4E00A91746 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7470CC3B24030F4E00A91746 /* Main.storyboard */; };
 		7470CC3F24030F4F00A91746 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7470CC3E24030F4F00A91746 /* Assets.xcassets */; };
 		7470CC4224030F4F00A91746 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7470CC4024030F4F00A91746 /* LaunchScreen.storyboard */; };
+		7470CC4C2403118400A91746 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7470CC4B2403118400A91746 /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		7470CC3E24030F4F00A91746 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7470CC4124030F4F00A91746 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7470CC4324030F4F00A91746 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7470CC4B2403118400A91746 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		7C8184AD9BC46E9D617937E3 /* Pods-TFInvest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFInvest.release.xcconfig"; path = "Target Support Files/Pods-TFInvest/Pods-TFInvest.release.xcconfig"; sourceTree = "<group>"; };
 		B1E03ED6E19C417A73567EB4 /* Pods-TFInvest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFInvest.debug.xcconfig"; path = "Target Support Files/Pods-TFInvest/Pods-TFInvest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				7470CC3524030F4E00A91746 /* AppDelegate.swift */,
+				7470CC4B2403118400A91746 /* R.generated.swift */,
 				7470CC3724030F4E00A91746 /* SceneDelegate.swift */,
 				7470CC3924030F4E00A91746 /* ViewController.swift */,
 				7470CC3B24030F4E00A91746 /* Main.storyboard */,
@@ -99,6 +102,7 @@
 			buildConfigurationList = 7470CC4624030F4F00A91746 /* Build configuration list for PBXNativeTarget "TFInvest" */;
 			buildPhases = (
 				8D358F11DCDF7CBD540C85FC /* [CP] Check Pods Manifest.lock */,
+				7470CC4A2403113200A91746 /* R.Swift */,
 				7470CC2E24030F4E00A91746 /* Sources */,
 				7470CC2F24030F4E00A91746 /* Frameworks */,
 				7470CC3024030F4E00A91746 /* Resources */,
@@ -196,6 +200,26 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
+		7470CC4A2403113200A91746 /* R.Swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = R.Swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n\n";
+		};
 		8D358F11DCDF7CBD540C85FC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -228,6 +252,7 @@
 				7470CC3A24030F4E00A91746 /* ViewController.swift in Sources */,
 				7470CC3624030F4E00A91746 /* AppDelegate.swift in Sources */,
 				7470CC3824030F4E00A91746 /* SceneDelegate.swift in Sources */,
+				7470CC4C2403118400A91746 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
