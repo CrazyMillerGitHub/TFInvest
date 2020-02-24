@@ -1,12 +1,12 @@
 PODS:
-  - AuthFramework (0.0.1)
+  - Base (0.0.1)
   - R.swift (5.1.0):
     - R.swift.Library (~> 5.1.0)
   - R.swift.Library (5.1.0)
   - SwiftLint (0.39.1)
 
 DEPENDENCIES:
-  - AuthFramework (from `../Frameworks/AuthFramework/`)
+  - Base (from `../Frameworks/Base/`)
   - R.swift
   - SwiftLint
 
@@ -17,15 +17,15 @@ SPEC REPOS:
     - SwiftLint
 
 EXTERNAL SOURCES:
-  AuthFramework:
-    :path: "../Frameworks/AuthFramework/"
+  Base:
+    :path: "../Frameworks/Base/"
 
 SPEC CHECKSUMS:
-  AuthFramework: 67e02d61bd5a6c97c1f92ca533a321a444f47a5c
+  Base: 00dbfd0398789d832fbabecedac5276996a14fe7
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: 7ae1e7957e8f8dc9ffb164d7bdb6c668fadf9815
+PODFILE CHECKSUM: 03b3dc651858a7335ace703f130db72dfe1c68eb
 
 COCOAPODS: 1.8.4
