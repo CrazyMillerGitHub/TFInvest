@@ -7,19 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7470CC5F2403230700A91746 /* AuthFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 7470CC5D2403230700A91746 /* AuthFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7470CC662403231500A91746 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7470CC652403231500A91746 /* AuthView.swift */; };
+		7470E00424044A0F00EEB330 /* Base.h in Headers */ = {isa = PBXBuildFile; fileRef = 7470E00224044A0F00EEB330 /* Base.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7470CC5A2403230700A91746 /* AuthFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7470CC5D2403230700A91746 /* AuthFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthFramework.h; sourceTree = "<group>"; };
-		7470CC5E2403230700A91746 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7470CC652403231500A91746 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		7470DFFF24044A0F00EEB330 /* Base.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Base.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7470E00224044A0F00EEB330 /* Base.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Base.h; sourceTree = "<group>"; };
+		7470E00324044A0F00EEB330 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7470CC572403230700A91746 /* Frameworks */ = {
+		7470DFFC24044A0F00EEB330 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -29,88 +27,78 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7470CC502403230600A91746 = {
+		7470DFF524044A0F00EEB330 = {
 			isa = PBXGroup;
 			children = (
-				7470CC5C2403230700A91746 /* AuthFramework */,
-				7470CC5B2403230700A91746 /* Products */,
+				7470E00124044A0F00EEB330 /* Base */,
+				7470E00024044A0F00EEB330 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		7470CC5B2403230700A91746 /* Products */ = {
+		7470E00024044A0F00EEB330 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7470CC5A2403230700A91746 /* AuthFramework.framework */,
+				7470DFFF24044A0F00EEB330 /* Base.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7470CC5C2403230700A91746 /* AuthFramework */ = {
+		7470E00124044A0F00EEB330 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				7470CC672403254F00A91746 /* Classes */,
-				7470CC5D2403230700A91746 /* AuthFramework.h */,
-				7470CC5E2403230700A91746 /* Info.plist */,
+				7470E00224044A0F00EEB330 /* Base.h */,
+				7470E00324044A0F00EEB330 /* Info.plist */,
 			);
-			path = AuthFramework;
-			sourceTree = "<group>";
-		};
-		7470CC672403254F00A91746 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				7470CC652403231500A91746 /* AuthView.swift */,
-			);
-			path = Classes;
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		7470CC552403230700A91746 /* Headers */ = {
+		7470DFFA24044A0F00EEB330 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7470CC5F2403230700A91746 /* AuthFramework.h in Headers */,
+				7470E00424044A0F00EEB330 /* Base.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		7470CC592403230700A91746 /* AuthFramework */ = {
+		7470DFFE24044A0F00EEB330 /* Base */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7470CC622403230700A91746 /* Build configuration list for PBXNativeTarget "AuthFramework" */;
+			buildConfigurationList = 7470E00724044A0F00EEB330 /* Build configuration list for PBXNativeTarget "Base" */;
 			buildPhases = (
-				7470CC552403230700A91746 /* Headers */,
-				7470CC562403230700A91746 /* Sources */,
-				7470CC572403230700A91746 /* Frameworks */,
-				7470CC582403230700A91746 /* Resources */,
+				7470DFFA24044A0F00EEB330 /* Headers */,
+				7470DFFB24044A0F00EEB330 /* Sources */,
+				7470DFFC24044A0F00EEB330 /* Frameworks */,
+				7470DFFD24044A0F00EEB330 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = AuthFramework;
-			productName = AuthFramework;
-			productReference = 7470CC5A2403230700A91746 /* AuthFramework.framework */;
+			name = Base;
+			productName = Base;
+			productReference = 7470DFFF24044A0F00EEB330 /* Base.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		7470CC512403230600A91746 /* Project object */ = {
+		7470DFF624044A0F00EEB330 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Mikhail Borisov";
 				TargetAttributes = {
-					7470CC592403230700A91746 = {
+					7470DFFE24044A0F00EEB330 = {
 						CreatedOnToolsVersion = 11.3;
-						LastSwiftMigration = 1130;
 					};
 				};
 			};
-			buildConfigurationList = 7470CC542403230600A91746 /* Build configuration list for PBXProject "AuthFramework" */;
+			buildConfigurationList = 7470DFF924044A0F00EEB330 /* Build configuration list for PBXProject "Base" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -118,18 +106,18 @@
 				en,
 				Base,
 			);
-			mainGroup = 7470CC502403230600A91746;
-			productRefGroup = 7470CC5B2403230700A91746 /* Products */;
+			mainGroup = 7470DFF524044A0F00EEB330;
+			productRefGroup = 7470E00024044A0F00EEB330 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7470CC592403230700A91746 /* AuthFramework */,
+				7470DFFE24044A0F00EEB330 /* Base */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7470CC582403230700A91746 /* Resources */ = {
+		7470DFFD24044A0F00EEB330 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -139,18 +127,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7470CC562403230700A91746 /* Sources */ = {
+		7470DFFB24044A0F00EEB330 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7470CC662403231500A91746 /* AuthView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		7470CC602403230700A91746 /* Debug */ = {
+		7470E00524044A0F00EEB330 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -213,7 +200,7 @@
 			};
 			name = Debug;
 		};
-		7470CC612403230700A91746 /* Release */ = {
+		7470E00624044A0F00EEB330 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -270,50 +257,47 @@
 			};
 			name = Release;
 		};
-		7470CC632403230700A91746 /* Debug */ = {
+		7470E00824044A0F00EEB330 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 4GB4E68ZU6;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = AuthFramework/Info.plist;
+				INFOPLIST_FILE = Base/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dsgnmike.AuthFramework;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dsgnmike.Base;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		7470CC642403230700A91746 /* Release */ = {
+		7470E00924044A0F00EEB330 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 4GB4E68ZU6;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = AuthFramework/Info.plist;
+				INFOPLIST_FILE = Base/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dsgnmike.AuthFramework;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dsgnmike.Base;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -324,25 +308,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7470CC542403230600A91746 /* Build configuration list for PBXProject "AuthFramework" */ = {
+		7470DFF924044A0F00EEB330 /* Build configuration list for PBXProject "Base" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7470CC602403230700A91746 /* Debug */,
-				7470CC612403230700A91746 /* Release */,
+				7470E00524044A0F00EEB330 /* Debug */,
+				7470E00624044A0F00EEB330 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7470CC622403230700A91746 /* Build configuration list for PBXNativeTarget "AuthFramework" */ = {
+		7470E00724044A0F00EEB330 /* Build configuration list for PBXNativeTarget "Base" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7470CC632403230700A91746 /* Debug */,
-				7470CC642403230700A91746 /* Release */,
+				7470E00824044A0F00EEB330 /* Debug */,
+				7470E00924044A0F00EEB330 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 7470CC512403230600A91746 /* Project object */;
+	rootObject = 7470DFF624044A0F00EEB330 /* Project object */;
 }
