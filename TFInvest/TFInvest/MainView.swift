@@ -7,13 +7,11 @@
 //
 
 import UIKit
-import AuthFramework
 
 class MainView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        AuthView.shared.test()
         // Do any additional setup after loading the view.
     }
 
