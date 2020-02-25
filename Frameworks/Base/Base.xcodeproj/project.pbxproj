@@ -14,6 +14,7 @@
 		749ED2302405C17200245EA8 /* extension+font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749ED22F2405C17200245EA8 /* extension+font.swift */; };
 		749ED2322405C23400245EA8 /* extension+stackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749ED2312405C23400245EA8 /* extension+stackView.swift */; };
 		749ED2342405C2C900245EA8 /* extension+textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749ED2332405C2C900245EA8 /* extension+textField.swift */; };
+		749ED2372405C3EF00245EA8 /* ElasticButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749ED2362405C3EF00245EA8 /* ElasticButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		749ED22F2405C17200245EA8 /* extension+font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension+font.swift"; sourceTree = "<group>"; };
 		749ED2312405C23400245EA8 /* extension+stackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension+stackView.swift"; sourceTree = "<group>"; };
 		749ED2332405C2C900245EA8 /* extension+textField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension+textField.swift"; sourceTree = "<group>"; };
+		749ED2362405C3EF00245EA8 /* ElasticButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		749ED22B2405BF1F00245EA8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				749ED2362405C3EF00245EA8 /* ElasticButton.swift */,
 				749ED22C2405C12E00245EA8 /* extensions */,
 				749ED2272405BF0600245EA8 /* Assembly.swift */,
 				749ED2292405BF1900245EA8 /* Base.swift */,
@@ -166,6 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				749ED2372405C3EF00245EA8 /* ElasticButton.swift in Sources */,
 				749ED22A2405BF1900245EA8 /* Base.swift in Sources */,
 				749ED22E2405C14200245EA8 /* extension+label.swift in Sources */,
 				749ED2322405C23400245EA8 /* extension+stackView.swift in Sources */,
