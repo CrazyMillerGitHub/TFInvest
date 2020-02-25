@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		7470E00424044A0F00EEB330 /* Base.h in Headers */ = {isa = PBXBuildFile; fileRef = 7470E00224044A0F00EEB330 /* Base.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		749ED2282405BF0600245EA8 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749ED2272405BF0600245EA8 /* Assembly.swift */; };
+		749ED22A2405BF1900245EA8 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749ED2292405BF1900245EA8 /* Base.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7470DFFF24044A0F00EEB330 /* Base.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Base.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7470E00224044A0F00EEB330 /* Base.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Base.h; sourceTree = "<group>"; };
 		7470E00324044A0F00EEB330 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		749ED2272405BF0600245EA8 /* Assembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Assembly.swift; path = Base/Classes/Assembly.swift; sourceTree = SOURCE_ROOT; };
+		749ED2292405BF1900245EA8 /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Base.swift; path = Base/Classes/Base.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,10 +50,20 @@
 		7470E00124044A0F00EEB330 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				749ED22B2405BF1F00245EA8 /* Classes */,
 				7470E00224044A0F00EEB330 /* Base.h */,
 				7470E00324044A0F00EEB330 /* Info.plist */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		749ED22B2405BF1F00245EA8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				749ED2272405BF0600245EA8 /* Assembly.swift */,
+				749ED2292405BF1900245EA8 /* Base.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,6 +109,7 @@
 				TargetAttributes = {
 					7470DFFE24044A0F00EEB330 = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -131,6 +146,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				749ED22A2405BF1900245EA8 /* Base.swift in Sources */,
+				749ED2282405BF0600245EA8 /* Assembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +277,7 @@
 		7470E00824044A0F00EEB330 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 4GB4E68ZU6;
@@ -276,6 +294,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dsgnmike.Base;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -284,6 +303,7 @@
 		7470E00924044A0F00EEB330 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 4GB4E68ZU6;
