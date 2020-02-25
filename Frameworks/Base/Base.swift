@@ -7,51 +7,96 @@
 
 import UIKit
 
-public protocol BaseControllerProtocol: class {
-    var viewModel: BaseViewModelProtocol? { get set }
-    var configuratorsContainer: ConfiguratorsContainerProtocol? { get set }
-    var modulesContainer: ModulesContainerProtocol? { get set }
-}
-public protocol BaseViewModelProtocol: class {
-    var params: Decodable? { get set }
-    var viewController: BaseControllerProtocol? { get set }
-    var servicesContainer: ServicesContainerProtocol? { get set }
-}
+public protocol TransitionModel { }
 
-public class BaseController: UIViewController, BaseControllerProtocol {
-    
-    public var viewModel: BaseViewModelProtocol?
-    public var configuratorsContainer: ConfiguratorsContainerProtocol?
-    public var modulesContainer: ModulesContainerProtocol?
-}
-public class BaseViewModel: BaseViewModelProtocol {
-    
-    public weak var viewController: BaseControllerProtocol?
-    public var servicesContainer: ServicesContainerProtocol?
-    public var params: Decodable?
+public protocol ModuleTransitionHandler where Self: UIViewController {}
 
-    required public init(params: Decodable?) {
-        self.params = params
+public extension ModuleTransitionHandler {
+    
+    func present<ModuleType: ModuleAssemblyProtocol>(with model: TransitionModel, moduleType: ModuleType,
+                                                     modalPresentationStyle: UIModalPresentationStyle = .fullScreen) {
+        let view = moduleType.configure(with: model)
+        view.modalPresentationStyle = modalPresentationStyle
+        present(view, animated: true, completion: nil)
+    }
+    
+    func presentModal<ModuleType: ModuleAssemblyProtocol>(with model: TransitionModel, moduleType: ModuleType,
+                                                          modalPresentationStyle: UIModalPresentationStyle = .fullScreen) {
+        let view = moduleType.configure(with: model)
+        let nc = UINavigationController(rootViewController: view)
+        nc.modalPresentationStyle = modalPresentationStyle
+        present(nc, animated: true, completion: nil)
+    }
+    
+    func present<ModuleType: ModuleAssemblyProtocol>(moduleType: ModuleType,
+                                                     modalPresentationStyle: UIModalPresentationStyle = .fullScreen) {
+        let view = moduleType.configure()
+        view.modalPresentationStyle = modalPresentationStyle
+        present(view, animated: true, completion: nil)
+    }
+    
+    func show<ModuleType: ModuleAssemblyProtocol>(with model: TransitionModel, moduleType: ModuleType) {
+        let view = moduleType.configure(with: model)
+        show(view, sender: nil)
+    }
+    
+    func pop() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func popToRootViewController() {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
+    func push<ModuleType: ModuleAssemblyProtocol>(with model: TransitionModel, moduleType: ModuleType) {
+        let view = moduleType.configure(with: model)
+        navigationController?.pushViewController(view, animated: true)
+    }
+    
+    func push<ModuleType: ModuleAssemblyProtocol>(moduleType: ModuleType) {
+        let view = moduleType.configure()
+        navigationController?.pushViewController(view, animated: true)
+    }
+    
+    func closeModule(completion: (() -> Void)? = nil) {
+        dismiss(animated: true, completion: completion)
     }
 }
 
-public protocol ConfiguratorProtocol {
-    func configure<T: BaseControllerProtocol, U: BaseViewModelProtocol>(with viewController: T, _ viewModel: U)
-    func configure<T: BaseControllerProtocol, U: BaseViewModelProtocol, Z: ServicesContainerProtocol>(with viewController: T, _ viewModel: U, servicesContainer: Z)
-    func configure<T: BaseControllerProtocol, U: BaseViewModelProtocol, V: ConfiguratorsContainerProtocol, W: ModulesContainerProtocol, Z: ServicesContainerProtocol>(with viewController: T, _ viewModel: U,
-                                                                                                                                                                      configuratorsContainer: V, modulesContainer: W, servicesContainer: Z)
-}
-public class BaseConfigurator: ConfiguratorProtocol {
+public protocol ServiceProtocol {}
+public class Service: ServiceProtocol {
     
-    required public init() {}
-    
-    public func configure<T, U>(with viewController: T, _ viewModel: U) where T : BaseControllerProtocol, U : BaseViewModelProtocol {}
-    public func configure<T, U, Z>(with viewController: T, _ viewModel: U, servicesContainer: Z) where T : BaseControllerProtocol, U : BaseViewModelProtocol, Z : ServicesContainerProtocol {}
-    public func configure<T, U, V, W, Z>(with viewController: T, _ viewModel: U,
-                                         configuratorsContainer: V, modulesContainer: W, servicesContainer: Z) where T : BaseControllerProtocol, U : BaseViewModelProtocol, V : ConfiguratorsContainerProtocol, W : ModulesContainerProtocol, Z : ServicesContainerProtocol {}
+    required init() {}
 }
 
-public class BaseService {
+public protocol ModuleAssemblyProtocol {
+    var moduleAssemblyContainer: ModuleAssemblyContainerProtocol? { get }
+    var serviceContainer: ServiceContainerProtocol? { get }
+    func configure() -> UIViewController
+    func configure(with model: TransitionModel) -> UIViewController
+}
+public extension ModuleAssemblyProtocol {
     
-    required public init() {}
+    func configure() -> UIViewController {
+        fatalError("implement assembleModule() in ModuleAssembly")
+    }
+    
+    func configure(with model: TransitionModel) -> UIViewController {
+        fatalError("implement assembleModule(with model: TransitionModel) in ModuleAssembly")
+    }
+}
+public class ModuleAssembly: ModuleAssemblyProtocol {
+    
+    public var moduleAssemblyContainer: ModuleAssemblyContainerProtocol?
+    public var serviceContainer: ServiceContainerProtocol?
+    
+    public required init(moduleAssemblyContainer: ModuleAssemblyContainerProtocol?,
+                         serviceContainer: ServiceContainerProtocol?) {
+        self.moduleAssemblyContainer = moduleAssemblyContainer
+        self.serviceContainer = serviceContainer
+    }
+    
+    convenience public required init() {
+        self.init(moduleAssemblyContainer: nil, serviceContainer: nil)
+    }
 }

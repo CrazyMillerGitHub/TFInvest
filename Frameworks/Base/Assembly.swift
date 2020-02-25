@@ -7,38 +7,31 @@
 
 import Foundation
 
-public protocol ConfiguratorsContainerProtocol {
-    func configurator<T: BaseConfigurator>() -> T
+public protocol ServiceContainerProtocol {
+    func service<T: Service>() -> T
 }
-open class ConfiguratorsContainer: ConfiguratorsContainerProtocol {
+open class ServiceContainer: ServiceContainerProtocol {
     
-    public func configurator<T: BaseConfigurator>() -> T {
-        let configurator = T.init()
-        return configurator
+    public func service<T: Service>() -> T {
+        let service = T.init()
+        return service
     }
 }
 
-public protocol ModulesContainerProtocol {
-    func viewController<T: BaseController>() -> T
-    func viewModel<U: BaseViewModel>(params: Decodable?) -> U
+public protocol ModuleAssemblyContainerProtocol {
+    func moduleAssembly<T: ModuleAssembly>() -> T
+    func moduleAssembly<T: ModuleAssembly>(with serviceContainer: ServiceContainerProtocol?) -> T
 }
-open class ModulesContainer: ModulesContainerProtocol {
+open class ModuleAssemblyContainer: ModuleAssemblyContainerProtocol {
     
-    public func viewController<T>() -> T where T : BaseController {
-        return T.init()
+    public func moduleAssembly<T: ModuleAssembly>() -> T {
+        let moduleAssembly = T.init()
+        return moduleAssembly
     }
     
-    public func viewModel<U>(params: Decodable?) -> U where U : BaseViewModel {
-        return U.init(params: params)
-    }
-}
-
-public protocol ServicesContainerProtocol {
-    func service<T: BaseService>() -> T
-}
-open class ServicesContainer: ServicesContainerProtocol {
-    
-    public func service<T: BaseService>() -> T {
-        return T.init()
+    public func moduleAssembly<T: ModuleAssembly>(with serviceContainer: ServiceContainerProtocol?) -> T {
+        let moduleAssembly = T.init(moduleAssemblyContainer: self,
+                                    serviceContainer: serviceContainer)
+        return moduleAssembly
     }
 }
