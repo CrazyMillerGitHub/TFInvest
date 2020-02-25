@@ -7,9 +7,11 @@
 
 import Foundation
 
-public protocol ServiceContainerProtocol {
+public protocol ServiceContainerGenerationProtocol {
     func service<T: Service>() -> T
 }
+public protocol ServiceContainerDelegate {}
+public typealias ServiceContainerProtocol = ServiceContainerGenerationProtocol & ServiceContainerDelegate
 open class ServiceContainer: ServiceContainerProtocol {
     
     public func service<T: Service>() -> T {
