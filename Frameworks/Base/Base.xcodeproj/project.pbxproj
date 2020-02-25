@@ -12,6 +12,7 @@
 		749ED22A2405BF1900245EA8 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749ED2292405BF1900245EA8 /* Base.swift */; };
 		749ED22E2405C14200245EA8 /* extension+label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749ED22D2405C14200245EA8 /* extension+label.swift */; };
 		749ED2302405C17200245EA8 /* extension+font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749ED22F2405C17200245EA8 /* extension+font.swift */; };
+		749ED2322405C23400245EA8 /* extension+stackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749ED2312405C23400245EA8 /* extension+stackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		749ED2292405BF1900245EA8 /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Base.swift; path = Base/Classes/Base.swift; sourceTree = SOURCE_ROOT; };
 		749ED22D2405C14200245EA8 /* extension+label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension+label.swift"; sourceTree = "<group>"; };
 		749ED22F2405C17200245EA8 /* extension+font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension+font.swift"; sourceTree = "<group>"; };
+		749ED2312405C23400245EA8 /* extension+stackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension+stackView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				749ED22D2405C14200245EA8 /* extension+label.swift */,
+				749ED2312405C23400245EA8 /* extension+stackView.swift */,
 				749ED22F2405C17200245EA8 /* extension+font.swift */,
 			);
 			path = extensions;
@@ -162,6 +165,7 @@
 			files = (
 				749ED22A2405BF1900245EA8 /* Base.swift in Sources */,
 				749ED22E2405C14200245EA8 /* extension+label.swift in Sources */,
+				749ED2322405C23400245EA8 /* extension+stackView.swift in Sources */,
 				749ED2302405C17200245EA8 /* extension+font.swift in Sources */,
 				749ED2282405BF0600245EA8 /* Assembly.swift in Sources */,
 			);
