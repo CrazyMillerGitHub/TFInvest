@@ -48,4 +48,34 @@ extension UITextField {
         return textField
     }
 
+    /// pin text field
+       /// - Parameter number: set number of textField
+       static func pin(number: Int) -> UITextField {
+           // inizialize textField
+           let textField = UITextField()
+           textField.backgroundColor = UIColor(red: 0.96, green: 0.96, blue: 0.96, alpha: 1.0)
+           // set cornerRadius
+           textField.layer.cornerRadius = 15
+           // disable autocapitalization
+           textField.autocapitalizationType = .none
+           // set clear button
+           textField.textAlignment = .center
+           // set keyboard type to number
+           textField.keyboardType = .numberPad
+           // set tag according to number
+           textField.tag = number
+           // set border for textField
+           textField.layer.borderColor = UIColor(red: 0.96, green: 0.96, blue: 0.96, alpha: 1.0).cgColor
+           // seto border width
+           textField.layer.borderWidth = 2
+
+           textField.font = UIFont.roundedFont(24, weight: .bold)
+
+           NSLayoutConstraint.activate([
+               textField.widthAnchor.constraint(equalTo: textField.heightAnchor, multiplier: 1.0)
+           ])
+
+           return textField
+       }
+
 }
