@@ -41,7 +41,16 @@ open class SignView: UIViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        // add target to signInButton
+        signButton.addTarget(self, action: #selector(signAction), for: .touchUpInside)
+        prepareDelegate()
     }
+
+    private func prepareDelegate() {
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+
 }
 
 // MARK: Prepare UI
