@@ -118,3 +118,45 @@ private extension SignView {
         
     }
 }
+
+// MARK: text field delegate for sign view
+extension SignView: UITextFieldDelegate {
+
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // see which text fiekd we use
+        switch textField {
+        // case when our text field
+        case emailTextField:
+            passwordTextField.becomeFirstResponder()
+        case _:
+            passwordTextField.resignFirstResponder()
+        }
+
+        return true
+    }
+
+    // MARK: Public
+
+    @objc private func signAction() {
+        // view that need to be presented
+        guard !slider.isOn else {
+
+            let presentView = MainView()
+            presentView.modalPresentationStyle = .fullScreen
+            DispatchQueue.main.async {
+                self.present(presentView, animated: true, completion: nil)
+            }
+
+            return
+        }
+
+        let presentView = PinView()
+        presentView.modalPresentationStyle = .fullScreen
+        DispatchQueue.main.async {
+            self.present(presentView, animated: true, completion: nil)
+        }
+
+    }
+
+}
+
