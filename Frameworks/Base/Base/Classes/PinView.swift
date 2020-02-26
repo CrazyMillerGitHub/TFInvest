@@ -8,7 +8,14 @@
 
 import UIKit
 
-class PinView: UIViewController {
+open class PinView: UIViewController {
+
+    public enum PinType {
+        case authorized
+        case nonAuthorized
+    }
+
+    var pinType: PinType = .nonAuthorized
 
     lazy var pinStackView = UIStackView.onboarding(axis: .horizontal, spacing: 20)
 
@@ -33,7 +40,26 @@ class PinView: UIViewController {
         return collection
     }()
 
-    override func loadView() {
+    private var isButtonActive: Bool = false {
+
+        didSet {
+            if isButtonActive != oldValue {
+                confirmButton.toggleState(state: isButtonActive)
+            }
+        }
+
+    }
+
+    public init(_ type: PinType = .nonAuthorized) {
+        super.init(nibName: nil, bundle: nil)
+        self.pinType = type
+    }
+
+    required public init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override open func loadView() {
         super.loadView()
         view.backgroundColor = .white
         view.addSubview(pinLabel)
@@ -45,9 +71,10 @@ class PinView: UIViewController {
         }
     }
 
-    override func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         prepareConstraints()
+        confirmButton.addTarget(self, action: #selector(confirmAction), for: .touchUpInside)
     }
 
 }
@@ -90,18 +117,42 @@ private extension PinView {
             }
         } else {
             textField.resignFirstResponder()
-            if result.joined(separator: "") != "1234" {
-                confirmButton.toggleState(state: true)
-                textFieldCollection.forEach { textField in
-                    let color = CABasicAnimation(keyPath: "borderColor")
-                    color.fromValue = textField.layer.borderColor
-                    color.toValue = UIColor.red.cgColor
-                    color.isRemovedOnCompletion = false
-                    color.duration = 0.5
-                    color.fillMode = .both
-                    textField.layer.add(color, forKey: nil)
+        }
+
+        isButtonActive = result.filter { $0 != "" }.count == 4
+    }
+
+    // MARK: - Button Action
+    func confirmAction() {
+        // check which pin type we have
+        switch pinType {
+        case .authorized:
+            do {
+                let currectPin = try KeychainService.shared.get(forKey: "userPin")
+                if currectPin! == result.joined(separator: "") {
+                    presentMainView()
                 }
+            } catch let error {
+                print(error)
             }
+        case .nonAuthorized:
+            do {
+                try KeychainService.shared.set(value: result.joined(separator: "").data(using: .utf8)!, forKey: "userPin")
+            } catch let error {
+                print(error)
+            }
+
+            UserDefaults.standard.set(true, forKey: "isUserRegistered")
+            presentMainView()
+        }
+    }
+
+    // MARK: - Present Main View
+    func presentMainView() {
+        let presentView = MainView()
+        presentView.modalPresentationStyle = .fullScreen
+        DispatchQueue.main.async {
+            self.present(presentView, animated: true, completion: nil)
         }
     }
 
