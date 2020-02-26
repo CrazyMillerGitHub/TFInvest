@@ -148,7 +148,7 @@ extension SignView: UITextFieldDelegate {
 
     @objc private func signAction() {
         // view that need to be presented
-        guard !slider.isOn else {
+        if !slider.isOn  {
 
             let presentView = MainView()
             presentView.modalPresentationStyle = .fullScreen
@@ -157,14 +157,14 @@ extension SignView: UITextFieldDelegate {
             }
 
             return
-        }
+        } else {
 
-        let presentView = PinView()
-        presentView.modalPresentationStyle = .fullScreen
-        DispatchQueue.main.async {
-            self.present(presentView, animated: true, completion: nil)
+            let presentView = PinView()
+            presentView.modalPresentationStyle = .fullScreen
+            DispatchQueue.main.async {
+                self.present(presentView, animated: true, completion: nil)
+            }
         }
-
     }
 
 }
