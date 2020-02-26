@@ -7,9 +7,9 @@
 
 import UIKit
 
-class MainView: UIViewController {
+open class MainView: UIViewController {
 
-    override func loadView() {
+    public override func loadView() {
         super.loadView()
         view.backgroundColor = .white
     }
