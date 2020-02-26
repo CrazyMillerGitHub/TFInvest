@@ -13,7 +13,6 @@ open class SignView: UIViewController {
     lazy var slider: UISwitch = {
         let slider = UISwitch()
         slider.setOn(false, animated: true)
-        slider.addTarget(self, action: #selector(slideAction(_:)), for: .valueChanged)
         return slider
     }()
 
