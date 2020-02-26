@@ -81,15 +81,6 @@ private extension SignView {
 
 @objc private extension SignView {
 
-    func slideAction(_ sender: UISwitch) {
-        switch sender.isOn {
-        case true:
-            signButton.toggleState(state: true)
-        case false:
-            signButton.toggleState(state: false)
-        }
-    }
-
     func textFieldDidChange(_ textField: UITextField) {
         var firstTFChecked: Bool = false
         var secondTFChecked: Bool = false
