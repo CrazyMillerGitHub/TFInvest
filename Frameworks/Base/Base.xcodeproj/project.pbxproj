@@ -17,6 +17,7 @@
 		749ED2372405C3EF00245EA8 /* ElasticButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749ED2362405C3EF00245EA8 /* ElasticButton.swift */; };
 		749ED2392405C48A00245EA8 /* SignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749ED2382405C48A00245EA8 /* SignView.swift */; };
 		749ED23B24061ADF00245EA8 /* PinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749ED23A24061ADE00245EA8 /* PinView.swift */; };
+		749F84882406D40B00436265 /* extension+string.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749F84872406D40B00436265 /* extension+string.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		749ED2362405C3EF00245EA8 /* ElasticButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticButton.swift; sourceTree = "<group>"; };
 		749ED2382405C48A00245EA8 /* SignView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignView.swift; sourceTree = "<group>"; };
 		749ED23A24061ADE00245EA8 /* PinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinView.swift; sourceTree = "<group>"; };
+		749F84872406D40B00436265 /* extension+string.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension+string.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			children = (
 				749ED22D2405C14200245EA8 /* extension+label.swift */,
 				749ED2312405C23400245EA8 /* extension+stackView.swift */,
+				749F84872406D40B00436265 /* extension+string.swift */,
 				749ED2332405C2C900245EA8 /* extension+textField.swift */,
 				749ED22F2405C17200245EA8 /* extension+font.swift */,
 			);
@@ -181,6 +184,7 @@
 				749ED2322405C23400245EA8 /* extension+stackView.swift in Sources */,
 				749ED2302405C17200245EA8 /* extension+font.swift in Sources */,
 				749ED23B24061ADF00245EA8 /* PinView.swift in Sources */,
+				749F84882406D40B00436265 /* extension+string.swift in Sources */,
 				749ED2392405C48A00245EA8 /* SignView.swift in Sources */,
 				749ED2282405BF0600245EA8 /* Assembly.swift in Sources */,
 				749ED2342405C2C900245EA8 /* extension+textField.swift in Sources */,

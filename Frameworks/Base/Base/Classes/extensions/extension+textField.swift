@@ -10,9 +10,9 @@ import UIKit
 
 extension UITextField {
 
-    enum TextFieldType {
-        case login
-        case password
+    enum TextFieldType: String {
+        case login = "Login"
+        case password = "Password"
     }
 
     /// Onboarding Container
@@ -33,19 +33,18 @@ extension UITextField {
         // set leftView
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 5))
         // create SF font: size 17, type: medium
-
+        textField.attributedPlaceholder = NSAttributedString(string: type.rawValue,
+        attributes: [NSAttributedString.Key.font: UIFont.roundedFont(17, weight: .regular),
+                     NSAttributedString.Key.foregroundColor: UIColor.black.withAlphaComponent(0.3)])
         switch type {
         case .login:
             textField.autocorrectionType = .no
             textField.textContentType = .emailAddress
             textField.tag = 1
-            textField.attributedPlaceholder = NSAttributedString(string: "Email",
-                                                                 attributes: [NSAttributedString.Key.font: UIFont.roundedFont(17, weight: .regular)])
         case .password:
             textField.textContentType = .password
             textField.tag = 2
             textField.isSecureTextEntry = true
-            textField.placeholder = "Password"
         }
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
