@@ -1,6 +1,6 @@
 # TFInvestApp
 
-Supports: iOS 12.x and above
+Supports: iOS 13.x and above
 
 ## Branches:
 
