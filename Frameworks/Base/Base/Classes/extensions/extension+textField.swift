@@ -37,10 +37,13 @@ extension UITextField {
         switch type {
         case .login:
             textField.autocorrectionType = .no
+            textField.textContentType = .emailAddress
+            textField.tag = 1
             textField.attributedPlaceholder = NSAttributedString(string: "Email",
                                                                  attributes: [NSAttributedString.Key.font: UIFont.roundedFont(17, weight: .regular)])
         case .password:
             textField.textContentType = .password
+            textField.tag = 2
             textField.isSecureTextEntry = true
             textField.placeholder = "Password"
         }
