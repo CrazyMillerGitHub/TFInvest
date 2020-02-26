@@ -30,6 +30,10 @@ extension UITextField {
         textField.clearButtonMode = UITextField.ViewMode.whileEditing
         // enable leftView as always
         textField.leftViewMode = .always
+        // set text color
+        textField.textColor = UIColor.black
+        // set font
+        textField.font = UIFont.roundedFont(17, weight: .regular)
         // set leftView
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 5))
         // create SF font: size 17, type: medium
