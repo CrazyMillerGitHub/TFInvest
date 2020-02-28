@@ -104,14 +104,17 @@ private extension PinView {
         // находим следующий tag для textField
         let nextTag = textField.tag + 1
         // проверяем пустой ли textField
-        if textField.text!.count > 1 {
+        guard let text = textField.text else {
+            return
+        }
+        if text.count > 1 {
             textField.text?.removeFirst()
         }
         result[textField.tag - 1] = textField.text ?? ""
         // находим, существует ли textField
 
         if let nextResponder = textField.superview?.viewWithTag(nextTag) {
-            if textField.text! != "" {
+            if !text.isEmpty {
                 confirmButton.toggleState(state: false)
                 nextResponder.becomeFirstResponder()
             }
@@ -128,8 +131,11 @@ private extension PinView {
         switch pinType {
         case .authorized:
             do {
-                let currectPin = try KeychainService.shared.get(forKey: "userPin")
-                if currectPin! == result.joined(separator: "") {
+                guard let currectPin = try KeychainService.shared.get(forKey: "userPin") else {
+                    return
+                }
+
+                if currectPin == result.joined(separator: "") {
                     presentMainView()
                 }
             } catch let error {
@@ -137,7 +143,10 @@ private extension PinView {
             }
         case .nonAuthorized:
             do {
-                try KeychainService.shared.set(value: result.joined(separator: "").data(using: .utf8)!, forKey: "userPin")
+                guard let value = result.joined(separator: "").data(using: .utf8) else {
+                    return
+                    }
+                try KeychainService.shared.set(value: value, forKey: "userPin")
             } catch let error {
                 print(error)
             }
