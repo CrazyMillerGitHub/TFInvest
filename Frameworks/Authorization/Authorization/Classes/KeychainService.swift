@@ -18,7 +18,12 @@ public class KeychainService {
     public static let shared = KeychainService()
 
     // make avaliable service name outside for getter
-    private(set) public var service = Bundle.main.bundleIdentifier!
+    public var service: String {
+        guard let identifier = Bundle.main.bundleIdentifier else {
+            return "com.tfinvest.keychain"
+        }
+        return identifier
+    }
 
     /// Check does the item exist
     /// - Parameter account: key of item
