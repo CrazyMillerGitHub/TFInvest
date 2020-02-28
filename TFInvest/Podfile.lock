@@ -1,4 +1,5 @@
 PODS:
+  - Authorization (0.0.1)
   - Base (0.0.1)
   - R.swift (5.1.0):
     - R.swift.Library (~> 5.1.0)
@@ -7,6 +8,7 @@ PODS:
   - SwiftLint (0.39.1)
 
 DEPENDENCIES:
+  - Authorization (from `../Frameworks/Authorization/`)
   - Base (from `../Frameworks/Base/`)
   - R.swift
   - Services (from `../Frameworks/Services/`)
@@ -19,18 +21,21 @@ SPEC REPOS:
     - SwiftLint
 
 EXTERNAL SOURCES:
+  Authorization:
+    :path: "../Frameworks/Authorization/"
   Base:
     :path: "../Frameworks/Base/"
   Services:
     :path: "../Frameworks/Services/"
 
 SPEC CHECKSUMS:
+  Authorization: f1e6eacd42241b85f73458f91b35c7b5451fe2b7
   Base: 8cf420445aa9a2cbcce0a16f27d8601a64d117eb
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
   Services: 0d86a4507df0823654e8e9d8c0d9523360c3ad48
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: d84d951f92732996c7357025dd75895c3ffa1e8d
+PODFILE CHECKSUM: 626c9f77cc745a880e31928b20d21fe2f8f192b4
 
 COCOAPODS: 1.8.4
