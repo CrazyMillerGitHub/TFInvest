@@ -10,20 +10,30 @@ import UIKit
 
 open class PinView: UIViewController {
 
+    // MARK: - Prepare UI
+
+    // Enum to choose which type should be our pinView
     public enum PinType {
+        // User authorized early
         case authorized
+        // We don't know who is it
         case nonAuthorized
     }
 
-    var pinType: PinType = .nonAuthorized
+    // dependency of our pin Type
+    private var pinType: PinType
 
+    // stackView of our textField
     lazy var pinStackView = UIStackView.onboarding(axis: .horizontal, spacing: 20)
 
+    // add confirm button
     lazy var confirmButton = ElasticButton(of: .confirmation, bgColor: .black)
 
+    // add variable that contains result of pin textField
     private var result: [String] = Array(repeatElement("", count: 4))
 
-    lazy var pinLabel: UILabel = {
+    // return pinLable
+    private lazy var pinLabel: UILabel = {
         let label = UILabel()
         label.text = "Enter 4-pin"
         label.font = UIFont.roundedFont(24, weight: .bold)
@@ -32,17 +42,23 @@ open class PinView: UIViewController {
         return label
     }()
 
+    // add collection of textField that will be used in stacjView
     lazy var textFieldCollection: [UITextField] = {
+        // create an empy textField
         var collection = [UITextField]()
+        // add textField to collection
         for number in 1...4 {
             collection.append(UITextField.pin(number: number))
         }
+        // return collections
         return collection
     }()
 
+    // MARK: Button switcher
     private var isButtonActive: Bool = false {
 
         didSet {
+            // is value did changed
             if isButtonActive != oldValue {
                 confirmButton.toggleState(state: isButtonActive)
             }
@@ -50,15 +66,21 @@ open class PinView: UIViewController {
 
     }
 
+    // MARK: - Init
+
+    /// public init
+    /// - Parameter type: dependendency injection with default value as .nonAuthorized
     public init(_ type: PinType = .nonAuthorized) {
-        super.init(nibName: nil, bundle: nil)
+        // dependency injection
         self.pinType = type
+        super.init(nibName: nil, bundle: nil)
     }
 
     required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: Load our view
     override open func loadView() {
         super.loadView()
         view.backgroundColor = .white
@@ -73,14 +95,18 @@ open class PinView: UIViewController {
 
     override open func viewDidLoad() {
         super.viewDidLoad()
+        // prepare constraints
         prepareConstraints()
+        // add target to button
         confirmButton.addTarget(self, action: #selector(confirmAction), for: .touchUpInside)
     }
 
 }
 
+// MARK: - Prepare constraints
 private extension PinView {
 
+    // prepare constraints
     func prepareConstraints() {
         NSLayoutConstraint.activate([
             pinStackView.heightAnchor.constraint(equalToConstant: 46),
