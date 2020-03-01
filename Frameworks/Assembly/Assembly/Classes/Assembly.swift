@@ -9,11 +9,20 @@ import Foundation
 import Base
 import Authorization
 
-public protocol ServiceContainerProtocol {
-}
 open class ServiceContainer: ServiceContainerProtocol {
 
-    required public init() {}
+    public init() {}
+
+
+    // MARK: - Service Container Protocol
+
+//    public func keychainServiceAssembly() -> ServiceAssemblyProtocol {
+//
+//    }
+//
+//    public func networkServiceAssebmly() -> ServiceAssemblyProtocol {
+//        
+//    }
 }
 
 open class ModuleContainer: ModuleContainerProtocol {

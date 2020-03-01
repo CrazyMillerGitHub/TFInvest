@@ -63,6 +63,17 @@ public extension ModuleTransitionHandler {
     }
 }
 
+/// Фабрики.
+public protocol ModuleContainerProtocol {
+    func authAssembly() -> ModuleAssemblyProtocol
+}
+
+public protocol ServiceContainerProtocol {
+//    func keychainServiceAssembly() -> ServiceAssemblyProtocol
+//    func networkServiceAssebmly() -> ServiceAssemblyProtocol
+}
+
+/// Ассемблы.
 public protocol ModuleAssemblyProtocol {
     var moduleContainer: ModuleContainerProtocol? { get }
     func configure() -> UIViewController
@@ -79,6 +90,5 @@ public extension ModuleAssemblyProtocol {
     }
 }
 
-public protocol ModuleContainerProtocol {
-    func authAssembly() -> ModuleAssemblyProtocol
-}
+//public protocol ServiceAssemblyProtocol {
+//}
