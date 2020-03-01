@@ -70,8 +70,7 @@ public class Service: ServiceProtocol {
 }
 
 public protocol ModuleAssemblyProtocol {
-    var moduleAssemblyContainer: ModuleAssemblyContainerProtocol? { get }
-    var serviceContainer: ServiceContainerProtocol? { get }
+    var moduleContainer: ModuleContainerProtocol? { get }
     func configure() -> UIViewController
     func configure(with model: TransitionModel) -> UIViewController
 }
@@ -86,17 +85,14 @@ public extension ModuleAssemblyProtocol {
     }
 }
 public class ModuleAssembly: ModuleAssemblyProtocol {
-
-    public var moduleAssemblyContainer: ModuleAssemblyContainerProtocol?
-    public var serviceContainer: ServiceContainerProtocol?
-
-    public required init(moduleAssemblyContainer: ModuleAssemblyContainerProtocol?,
-                         serviceContainer: ServiceContainerProtocol?) {
-        self.moduleAssemblyContainer = moduleAssemblyContainer
-        self.serviceContainer = serviceContainer
+    
+    public var moduleContainer: ModuleContainerProtocol?
+    
+    public required init(moduleContainer: ModuleContainerProtocol?) {
+        self.moduleContainer = moduleContainer
     }
 
     convenience public required init() {
-        self.init(moduleAssemblyContainer: nil, serviceContainer: nil)
+        self.init(moduleContainer: nil)
     }
 }
