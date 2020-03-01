@@ -8,6 +8,7 @@
 
 import UIKit
 import Authorization
+import Assembly
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -19,6 +20,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.rootViewController = UserDefaults.standard.bool(forKey: "isUserRegistered") ? PinView(.authorized) : SignView()
         window?.makeKeyAndVisible()
+        
+        
+        let serviceContainer = ServiceContainer()
+        let moduleContainer = ModuleContainer(serviceContainer: serviceContainer)
+        let authAssembly = moduleContainer.authAssembly()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

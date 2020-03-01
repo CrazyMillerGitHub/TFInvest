@@ -1,6 +1,9 @@
 PODS:
-  - Assembly (0.0.1)
+  - Assembly (0.0.1):
+    - Authorization
+    - Base
   - Authorization (0.0.1):
+    - Base
     - R.swift
   - Base (0.0.1)
   - Core (0.0.1):
@@ -39,8 +42,8 @@ EXTERNAL SOURCES:
     :path: "../Frameworks/Services/"
 
 SPEC CHECKSUMS:
-  Assembly: 58fb30e304e9f01867edabe85e3127f6cd4e3183
-  Authorization: d606d5f909eb488268ccfa0b64c79c9ae0da0b31
+  Assembly: 841d33138f24d143e7c0725a482f332beaa43cb8
+  Authorization: 75efc3a677b176c2cf9b82a7b7d194ed0510cde1
   Base: 8cf420445aa9a2cbcce0a16f27d8601a64d117eb
   Core: fd16d80097c3da0d5c94095c920cc1c9b2673750
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
