@@ -9,11 +9,17 @@ import Foundation
 import Base
 import Authorization
 
-public protocol ServiceContainerProtocol {
-}
 open class ServiceContainer: ServiceContainerProtocol {
 
-    required public init() {}
+    public init() {}
+
+
+    // MARK: - Service Container Protocol
+
+//    public func keychainServiceAssembly<T: ServiceAssemblyProtocol>() -> T {
+//        let keychainServiceAssembly: KeychainServiceAssembly = KeychainServiceAssembly()
+//        return keychainServiceAssembly
+//    }
 }
 
 open class ModuleContainer: ModuleContainerProtocol {
@@ -27,8 +33,8 @@ open class ModuleContainer: ModuleContainerProtocol {
 
     // MARK: - Module Container Protocol
 
-    public func authAssembly() -> ModuleAssemblyProtocol {
-        let authAssemly = AuthAssembly(moduleContainer: self)
-        return authAssemly
+    public func authAssembly<T: ModuleAssemblyProtocol>() -> T {
+        let authAssembly: AuthAssembly = AuthAssembly(moduleContainer: self)
+        return authAssembly
     }
 }

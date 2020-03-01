@@ -8,8 +8,9 @@
 
 import Foundation
 import Security
+import Base
 
-public class KeychainService {
+public class KeychainService { // : ServiceProtocol {
 
     enum Errors: Error {
         case keychainError

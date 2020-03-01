@@ -63,12 +63,16 @@ public extension ModuleTransitionHandler {
     }
 }
 
-public protocol ServiceProtocol {}
-public class Service: ServiceProtocol {
-
-    required init() {}
+/// Фабрики.
+public protocol ModuleContainerProtocol {
+    func authAssembly<T: ModuleAssemblyProtocol>() -> T
 }
 
+public protocol ServiceContainerProtocol {
+//    func keychainServiceAssembly<T: ServiceAssemblyProtocol>() -> T
+}
+
+/// Ассемблы.
 public protocol ModuleAssemblyProtocol {
     var moduleContainer: ModuleContainerProtocol? { get }
     func configure() -> UIViewController
@@ -85,6 +89,7 @@ public extension ModuleAssemblyProtocol {
     }
 }
 
-public protocol ModuleContainerProtocol {
-    func authAssembly() -> ModuleAssemblyProtocol
+public protocol ServiceProtocol {}
+public protocol ServiceAssemblyProtocol {
+//    func configure<T: ServiceProtocol>() -> T
 }
