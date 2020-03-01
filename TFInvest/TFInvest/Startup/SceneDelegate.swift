@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Base
+import Authorization
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
