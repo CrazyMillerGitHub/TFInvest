@@ -108,19 +108,18 @@ private extension PinView {
             textField.text?.removeFirst()
         }
 
-
         result[textField.tag - 1] = textField.text ?? ""
         // находим, существует ли textField
 
-        if let nextResponder = textField.superview?.viewWithTag(nextTag), let text = textField.text  {
-            if text.isEmpty {
-                confirmButton.toggleState(state: false)
+        if let nextResponder = textField.superview?.viewWithTag(nextTag), let text = textField.text {
+            if !text.isEmpty {
                 nextResponder.becomeFirstResponder()
             }
         } else {
             textField.resignFirstResponder()
         }
 
+        print(result.filter { $0 != "" }.count == 4)
         isButtonActive = result.filter { $0 != "" }.count == 4
     }
 

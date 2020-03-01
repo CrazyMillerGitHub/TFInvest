@@ -127,7 +127,7 @@ private extension SignView {
     }
 }
 
-// MARK: text field delegate for sign view
+// MARK: - text field delegate for sign view
 extension SignView: UITextFieldDelegate {
 
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
