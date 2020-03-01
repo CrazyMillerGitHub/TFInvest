@@ -84,15 +84,7 @@ public extension ModuleAssemblyProtocol {
         fatalError("implement assembleModule(with model: TransitionModel) in ModuleAssembly")
     }
 }
-public class ModuleAssembly: ModuleAssemblyProtocol {
-    
-    public var moduleContainer: ModuleContainerProtocol?
-    
-    public required init(moduleContainer: ModuleContainerProtocol?) {
-        self.moduleContainer = moduleContainer
-    }
 
-    convenience public required init() {
-        self.init(moduleContainer: nil)
-    }
+public protocol ModuleContainerProtocol {
+    func authAssembly() -> ModuleAssemblyProtocol
 }
