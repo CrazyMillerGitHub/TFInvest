@@ -63,12 +63,6 @@ public extension ModuleTransitionHandler {
     }
 }
 
-public protocol ServiceProtocol {}
-public class Service: ServiceProtocol {
-
-    required init() {}
-}
-
 public protocol ModuleAssemblyProtocol {
     var moduleContainer: ModuleContainerProtocol? { get }
     func configure() -> UIViewController
