@@ -6,6 +6,7 @@ target 'TFInvest' do
   pod 'Services', :path => '../Frameworks/Services/'
   pod 'Authorization', :path => '../Frameworks/Authorization/'
   pod 'Core', :path => '../Frameworks/Core/'
+  pod 'Assembly', :path => '../Frameworks/Assembly/'
   pod 'R.swift'
   pod 'SwiftLint'
   # Pods for TFInvest
