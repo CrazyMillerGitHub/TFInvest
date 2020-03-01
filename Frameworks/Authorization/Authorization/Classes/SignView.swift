@@ -93,15 +93,15 @@ private extension SignView {
     func textFieldDidChange(_ textField: UITextField) {
         var firstTFChecked: Bool = false
         var secondTFChecked: Bool = false
-        
+
         guard let textFieldContent = textField.text else {
             return
         }
-        
+
         guard let textFieldType = textField.textContentType else {
             return
         }
-        
+
         // идем проверять измененный textField
         if textFieldType == .emailAddress {
             firstTFChecked = textFieldContent.isValidEmail()
@@ -109,26 +109,25 @@ private extension SignView {
         } else if textFieldType == .password {
             secondTFChecked = textFieldContent.isValidPassword()
         }
-        
+
         // идем проверять другой textField
         let currentTag = textField.tag
-        
         if let otherTextField = textField.superview?.viewWithTag(currentTag + 1) as? UITextField, let passwordTextFieldContent = otherTextField.text {
             secondTFChecked = passwordTextFieldContent.isValidPassword()
         } else if let otherTextField = textField.superview?.viewWithTag(currentTag - 1) as? UITextField, let emailTextFieldContent = otherTextField.text {
             firstTFChecked = emailTextFieldContent.isValidEmail()
         }
-        
+
         if firstTFChecked && secondTFChecked {
             signButton.toggleState(state: true)
         } else {
             signButton.toggleState(state: false)
         }
-        
+
     }
 }
 
-// MARK: text field delegate for sign view
+// MARK: - text field delegate for sign view
 extension SignView: UITextFieldDelegate {
 
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -148,11 +147,11 @@ extension SignView: UITextFieldDelegate {
 
     @objc private func signAction() {
         // view that need to be presented
-        if !slider.isOn  {
+        if !slider.isOn {
 
             let presentView = MainView()
             presentView.modalPresentationStyle = .fullScreen
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [unowned self] in
                 self.present(presentView, animated: true, completion: nil)
             }
 
@@ -161,11 +160,10 @@ extension SignView: UITextFieldDelegate {
 
             let presentView = PinView()
             presentView.modalPresentationStyle = .fullScreen
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [unowned self] in
                 self.present(presentView, animated: true, completion: nil)
             }
         }
     }
 
 }
-
