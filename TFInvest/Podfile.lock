@@ -1,5 +1,6 @@
 PODS:
-  - Authorization (0.0.1)
+  - Authorization (0.0.1):
+    - R.swift
   - Base (0.0.1)
   - R.swift (5.1.0):
     - R.swift.Library (~> 5.1.0)
@@ -29,7 +30,7 @@ EXTERNAL SOURCES:
     :path: "../Frameworks/Services/"
 
 SPEC CHECKSUMS:
-  Authorization: f1e6eacd42241b85f73458f91b35c7b5451fe2b7
+  Authorization: d606d5f909eb488268ccfa0b64c79c9ae0da0b31
   Base: 8cf420445aa9a2cbcce0a16f27d8601a64d117eb
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc

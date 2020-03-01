@@ -2,7 +2,7 @@ opt_in_rules:
 - force_unwrapping
 excluded: # paths to ignore during linting. Takes precedence over `included`.
 - Pods
-- *.generated.swift
+- R.generated.swift
 included:
 - ../Frameworks
 

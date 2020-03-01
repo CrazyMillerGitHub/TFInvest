@@ -112,7 +112,6 @@ private extension SignView {
 
         // идем проверять другой textField
         let currentTag = textField.tag
-
         if let otherTextField = textField.superview?.viewWithTag(currentTag + 1) as? UITextField, let passwordTextFieldContent = otherTextField.text {
             secondTFChecked = passwordTextFieldContent.isValidPassword()
         } else if let otherTextField = textField.superview?.viewWithTag(currentTag - 1) as? UITextField, let emailTextFieldContent = otherTextField.text {
@@ -152,7 +151,7 @@ extension SignView: UITextFieldDelegate {
 
             let presentView = MainView()
             presentView.modalPresentationStyle = .fullScreen
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [unowned self] in
                 self.present(presentView, animated: true, completion: nil)
             }
 
@@ -161,7 +160,7 @@ extension SignView: UITextFieldDelegate {
 
             let presentView = PinView()
             presentView.modalPresentationStyle = .fullScreen
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [unowned self] in
                 self.present(presentView, animated: true, completion: nil)
             }
         }

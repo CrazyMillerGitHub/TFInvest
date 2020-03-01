@@ -104,17 +104,16 @@ private extension PinView {
         // находим следующий tag для textField
         let nextTag = textField.tag + 1
         // проверяем пустой ли textField
-        guard let text = textField.text else {
-            return
-        }
-        if text.count > 1 {
+        if let text = textField.text, text.count > 1 {
             textField.text?.removeFirst()
         }
+
+
         result[textField.tag - 1] = textField.text ?? ""
         // находим, существует ли textField
 
-        if let nextResponder = textField.superview?.viewWithTag(nextTag) {
-            if !text.isEmpty {
+        if let nextResponder = textField.superview?.viewWithTag(nextTag), let text = textField.text  {
+            if text.isEmpty {
                 confirmButton.toggleState(state: false)
                 nextResponder.becomeFirstResponder()
             }
