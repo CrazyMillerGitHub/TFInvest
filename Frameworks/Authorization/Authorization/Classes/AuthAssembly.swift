@@ -9,13 +9,13 @@ import Foundation
 import Base
 
 open class AuthAssembly: ModuleAssemblyProtocol {
-    
+
     public var moduleContainer: ModuleContainerProtocol?
-    
+
     public init(moduleContainer: ModuleContainerProtocol) {
         self.moduleContainer = moduleContainer
     }
-    
+
     public func configure() -> UIViewController {
 //        let viewController = UIViewController()
 //        let viewModel = ViewModel()

@@ -9,7 +9,7 @@ import Foundation
 import Base
 
 class KeychainServiceAssembly: ServiceAssemblyProtocol {
-    
+
 //    func configure<T: ServiceProtocol>() -> T {
 //        let keychainService = KeychainService()
 //        return keychainService

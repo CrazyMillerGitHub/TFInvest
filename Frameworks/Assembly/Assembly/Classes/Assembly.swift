@@ -13,7 +13,6 @@ open class ServiceContainer: ServiceContainerProtocol {
 
     public init() {}
 
-
     // MARK: - Service Container Protocol
 
 //    public func keychainServiceAssembly() -> ServiceAssemblyProtocol {
@@ -29,7 +28,6 @@ open class ModuleContainer: ModuleContainerProtocol {
     public init(serviceContainer: ServiceContainerProtocol) {
         self.serviceContainer = serviceContainer
     }
-
 
     // MARK: - Module Container Protocol
 

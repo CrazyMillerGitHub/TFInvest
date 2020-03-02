@@ -14,7 +14,6 @@ protocol Adaptable: UITableViewCell {
 
 class TableViewAdapter<Model: Decodable, Cell: Adaptable>: NSObject, UITableViewDataSource {
 
-
     // MARK: Private Properties
 
     private var tableView: UITableView!
@@ -24,7 +23,6 @@ class TableViewAdapter<Model: Decodable, Cell: Adaptable>: NSObject, UITableView
         }
     }
 
-
     // MARK: Init
 
     init(tableView: UITableView) {
@@ -32,7 +30,6 @@ class TableViewAdapter<Model: Decodable, Cell: Adaptable>: NSObject, UITableView
         self.tableView = tableView
         self.tableView.dataSource = self
     }
-
 
     // MARK: Public
 
