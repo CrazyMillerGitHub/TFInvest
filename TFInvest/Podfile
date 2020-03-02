@@ -1,24 +1,24 @@
 platform :ios, '13.0'
 use_frameworks!
 
-#pre_install do |installer|
-#    installer.pod_targets.flat_map do |pod_target|
-#        if pod_target.pod_target_srcroot.include? 'Frameworks' # Идем по всем подам и если в их пути есть LocalPods, то применяем к ним то, что ниже
-#            pod_target_srcroot = pod_target.pod_target_srcroot # Достаем путь
-#            pod_target_path = pod_target_srcroot.sub('${PODS_ROOT}/..', '.') # Меняем переменные окружения на относительный путь
-#            pod_target_sources_path = pod_target_path + '/' + pod_target.name + '/Classes' # Создаем путь до папки Sources
-#            generated_file_path = pod_target_sources_path + '/R.generated.swift' # Создаем путь до файла R.generated.swift
-#            File.new(generated_file_path, 'w') # Создаем пустой файл R.generated.swift с возможностью записи в него
-#        end
-#    end
-#end
+pre_install do |installer|
+    installer.pod_targets.flat_map do |pod_target|
+        if pod_target.pod_target_srcroot.include? 'Frameworks'
+            pod_target_srcroot = pod_target.pod_target_srcroot
+            pod_target_path = pod_target_srcroot.sub('${PODS_ROOT}/..', '.')
+            pod_target_sources_path = pod_target_path + '/' + pod_target.name + '/Classes'
+            generated_file_path = pod_target_sources_path + '/R.generated.swift'
+            File.new(generated_file_path, 'w')
+        end
+    end
+end
 
 target 'TFInvest' do
-  pod 'Base', :path => '../Frameworks/Base/'
-  pod 'Services', :path => '../Frameworks/Services/'
-  pod 'Authorization', :path => '../Frameworks/Authorization/'
-  pod 'Core', :path => '../Frameworks/Core/'
-  pod 'Assembly', :path => '../Frameworks/Assembly/'
+  pod 'Base', :path => 'Frameworks/Base/'
+  pod 'Services', :path => 'Frameworks/Services/'
+  pod 'Authorization', :path => 'Frameworks/Authorization/'
+  pod 'Core', :path => 'Frameworks/Core/'
+  pod 'Assembly', :path => 'Frameworks/Assembly/'
   pod 'R.swift'
   pod 'SwiftLint'
   # Pods for TFInvest
