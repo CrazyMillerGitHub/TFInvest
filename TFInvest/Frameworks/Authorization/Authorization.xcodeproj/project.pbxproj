@@ -117,6 +117,7 @@
 			buildConfigurationList = 7405D7602409163B008C6693 /* Build configuration list for PBXNativeTarget "Authorization" */;
 			buildPhases = (
 				7405D7532409163B008C6693 /* Headers */,
+				74B3EB69240D8A8B000A1B53 /* R.Swift */,
 				7405D7542409163B008C6693 /* Sources */,
 				7405D7552409163B008C6693 /* Frameworks */,
 				7405D7562409163B008C6693 /* Resources */,
@@ -172,6 +173,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		74B3EB69240D8A8B000A1B53 /* R.Swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = R.Swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$PODS_TARGET_SRCROOT/Authorization/Classes/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7405D7542409163B008C6693 /* Sources */ = {

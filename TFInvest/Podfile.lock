@@ -16,12 +16,12 @@ PODS:
   - SwiftLint (0.39.1)
 
 DEPENDENCIES:
-  - Assembly (from `../Frameworks/Assembly/`)
-  - Authorization (from `../Frameworks/Authorization/`)
-  - Base (from `../Frameworks/Base/`)
-  - Core (from `../Frameworks/Core/`)
+  - Assembly (from `Frameworks/Assembly/`)
+  - Authorization (from `Frameworks/Authorization/`)
+  - Base (from `Frameworks/Base/`)
+  - Core (from `Frameworks/Core/`)
   - R.swift
-  - Services (from `../Frameworks/Services/`)
+  - Services (from `Frameworks/Services/`)
   - SwiftLint
 
 SPEC REPOS:
@@ -32,19 +32,19 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   Assembly:
-    :path: "../Frameworks/Assembly/"
+    :path: Frameworks/Assembly/
   Authorization:
-    :path: "../Frameworks/Authorization/"
+    :path: Frameworks/Authorization/
   Base:
-    :path: "../Frameworks/Base/"
+    :path: Frameworks/Base/
   Core:
-    :path: "../Frameworks/Core/"
+    :path: Frameworks/Core/
   Services:
-    :path: "../Frameworks/Services/"
+    :path: Frameworks/Services/
 
 SPEC CHECKSUMS:
   Assembly: 841d33138f24d143e7c0725a482f332beaa43cb8
-  Authorization: 75efc3a677b176c2cf9b82a7b7d194ed0510cde1
+  Authorization: 179a5cfa6f274717040dab96c650e99657974099
   Base: 8cf420445aa9a2cbcce0a16f27d8601a64d117eb
   Core: fd16d80097c3da0d5c94095c920cc1c9b2673750
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
@@ -52,6 +52,6 @@ SPEC CHECKSUMS:
   Services: dabe41f51e5821b82ca342286e4acdfc820306be
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: 8ba309fc91affc3119478830c5809e462824ad0d
+PODFILE CHECKSUM: 8b46309c64626d52e907046e98f5e87b4f7db305
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.0
