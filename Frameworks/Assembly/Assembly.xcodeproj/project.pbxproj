@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		74D3E5D5240BDD0B003D6424 /* Assembly.h in Headers */ = {isa = PBXBuildFile; fileRef = 74D3E5D3240BDD0B003D6424 /* Assembly.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		74E4E401240CFACA0056BA07 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E4E400240CFACA0056BA07 /* Assembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		74D3E5D0240BDD0B003D6424 /* Assembly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Assembly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D3E5D3240BDD0B003D6424 /* Assembly.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Assembly.h; sourceTree = "<group>"; };
 		74D3E5D4240BDD0B003D6424 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74E4E400240CFACA0056BA07 /* Assembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 		74D3E5DB240BDD1B003D6424 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				74E4E400240CFACA0056BA07 /* Assembly.swift */,
 				74D3E5D3240BDD0B003D6424 /* Assembly.h */,
 			);
 			path = Classes;
@@ -103,6 +106,7 @@
 				TargetAttributes = {
 					74D3E5CF240BDD0B003D6424 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -139,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74E4E401240CFACA0056BA07 /* Assembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +273,7 @@
 		74D3E5D9240BDD0B003D6424 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 4GB4E68ZU6;
@@ -284,6 +290,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dsgnmike.Assembly;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -292,6 +299,7 @@
 		74D3E5DA240BDD0B003D6424 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 4GB4E68ZU6;
