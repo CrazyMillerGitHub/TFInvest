@@ -12,7 +12,7 @@ open class AuthAssembly: ModuleAssemblyProtocol {
     
     public var moduleContainer: ModuleContainerProtocol?
     
-    init(moduleContainer: ModuleContainerProtocol) {
+    public init(moduleContainer: ModuleContainerProtocol) {
         self.moduleContainer = moduleContainer
     }
     

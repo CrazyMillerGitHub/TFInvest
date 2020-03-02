@@ -16,8 +16,8 @@ open class ServiceContainer: ServiceContainerProtocol {
 
     // MARK: - Service Container Protocol
 
-//    public func keychainServiceAssembly<T: ServiceAssemblyProtocol>() -> T {
-//        let keychainServiceAssembly: KeychainServiceAssembly = KeychainServiceAssembly()
+//    public func keychainServiceAssembly() -> ServiceAssemblyProtocol {
+//        let keychainServiceAssembly = KeychainServiceAssembly()
 //        return keychainServiceAssembly
 //    }
 }
@@ -33,8 +33,8 @@ open class ModuleContainer: ModuleContainerProtocol {
 
     // MARK: - Module Container Protocol
 
-    public func authAssembly<T: ModuleAssemblyProtocol>() -> T {
-        let authAssembly: AuthAssembly = AuthAssembly(moduleContainer: self)
+    public func authAssembly() -> ModuleAssemblyProtocol {
+        let authAssembly = AuthAssembly(moduleContainer: self)
         return authAssembly
     }
 }

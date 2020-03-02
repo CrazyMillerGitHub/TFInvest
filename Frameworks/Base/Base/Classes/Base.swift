@@ -65,11 +65,11 @@ public extension ModuleTransitionHandler {
 
 /// Фабрики.
 public protocol ModuleContainerProtocol {
-    func authAssembly<T: ModuleAssemblyProtocol>() -> T
+    func authAssembly() -> ModuleAssemblyProtocol
 }
 
 public protocol ServiceContainerProtocol {
-//    func keychainServiceAssembly<T: ServiceAssemblyProtocol>() -> T
+//    func keychainServiceAssembly() -> ServiceAssemblyProtocol
 }
 
 /// Ассемблы.
