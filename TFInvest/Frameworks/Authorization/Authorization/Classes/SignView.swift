@@ -161,7 +161,8 @@ extension SignView: UITextFieldDelegate {
 
             let presentView = PinView()
             presentView.modalPresentationStyle = .fullScreen
-            DispatchQueue.main.async { [unowned self] in
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
                 self.present(presentView, animated: true, completion: nil)
             }
         }
