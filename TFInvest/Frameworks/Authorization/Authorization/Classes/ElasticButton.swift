@@ -7,22 +7,24 @@
 //
 
 import UIKit
+import Rswift
 
 class ElasticButton: UIButton {
 
     var isActive = false
 
-    enum ElasticType: String {
-        case login = "Log In"
-        case logout = "Log Out"
-        case confirmation = "Confirm"
+    enum ElasticType {
+        case login
+        case logout
+        case confirmation
     }
 
     init(of type: ElasticType = .login, bgColor: UIColor = .black) {
         super.init(frame: .zero)
         backgroundColor = bgColor
         layer.cornerRadius = 15
-        setTitle(type.rawValue, for: .normal)
+        setTitle(type == .login ? R.string.localizable.log_in() :
+            type == .logout ? R.string.localizable.log_out() : R.string.localizable.confirm(), for: .normal)
         titleLabel?.font = UIFont.roundedFont(17, weight: .semibold)
         layer.shadowOffset = CGSize(width: 0, height: 10)
         layer.shadowRadius = 20

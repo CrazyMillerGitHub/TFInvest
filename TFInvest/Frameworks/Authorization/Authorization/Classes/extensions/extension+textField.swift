@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import Rswift
 
 extension UITextField {
 
     enum TextFieldType: String {
-        case login = "Login"
-        case password = "Password"
+        case login
+        case password
     }
 
     /// Onboarding Container
@@ -37,7 +38,7 @@ extension UITextField {
         // set leftView
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 5))
         // create SF font: size 17, type: medium
-        textField.attributedPlaceholder = NSAttributedString(string: type.rawValue,
+        textField.attributedPlaceholder = NSAttributedString(string: type == .login ? R.string.localizable.email() : R.string.localizable.password(),
         attributes: [NSAttributedString.Key.font: UIFont.roundedFont(17, weight: .regular),
                      NSAttributedString.Key.foregroundColor: UIColor.black.withAlphaComponent(0.3)])
         switch type {
