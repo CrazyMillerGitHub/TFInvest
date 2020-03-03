@@ -21,7 +21,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = UserDefaults.standard.bool(forKey: "isUserRegistered") ? PinView(.authorized) : SignView()
         window?.makeKeyAndVisible()
         
-        
         let serviceContainer = ServiceContainer()
         let moduleContainer = ModuleContainer(serviceContainer: serviceContainer)
         let authAssembly = moduleContainer.authAssembly()
