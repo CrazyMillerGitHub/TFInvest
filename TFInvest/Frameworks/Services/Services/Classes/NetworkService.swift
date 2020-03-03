@@ -16,7 +16,7 @@ public protocol NetworkServiceProtocol {
 
 open class NetworkService: NetworkServiceProtocol {
 
-    private let requestSender: RequestSenderProtocol = RequestSender(async: true)
+    private let requestSender: RequestSenderProtocol = RequestSender()
 
     public init() {}
 

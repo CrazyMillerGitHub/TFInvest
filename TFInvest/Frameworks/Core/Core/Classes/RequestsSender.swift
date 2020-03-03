@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Base
 
 public protocol RequestSenderProtocol {
     func send<Model, Parser>(config: RequestConfig<Model, Parser>, completionHandler: @escaping (Result<Model, Error>) -> Void )
@@ -14,24 +15,18 @@ public protocol RequestSenderProtocol {
 
 public class RequestSender: RequestSenderProtocol {
 
-    let session = URLSession.shared
-    let queue: DispatchQoS.QoSClass = .userInitiated
-    var async: Bool = false
-
-    public init(async: Bool = false) {
-        if async {
-            self.async = async
-        }
-    }
+    public init() {}
 
     public func send<ModelType, Parser>(config: RequestConfig<ModelType, Parser>, completionHandler: @escaping (Result<ModelType, Error>) -> Void) {
+
+        let inQueue = DispatchQueue.current
 
         guard let urlRequest = config.request.urlRequest else {
             completionHandler(.failure(NetworkServiceError.urlConstuctFailure("URL string can't be parsed to URL.")))
             return
         }
 
-        let task = session.dataTask(with: urlRequest) { (data: Data?, response: URLResponse?, error: Error?) in
+        let task = URLSession.shared.dataTask(with: urlRequest) { (data: Data?, response: URLResponse?, error: Error?) in
             if let error = error {
                 completionHandler(.failure(error))
                 return
@@ -41,16 +36,11 @@ public class RequestSender: RequestSenderProtocol {
                 return
             }
 
-            completionHandler(Result.success(parsedModel))
+            inQueue?.async {
+                completionHandler(Result.success(parsedModel))
+            }
         }
 
-        if async == true {
-            let queue = self.queue
-            DispatchQueue.global(qos: queue).async {
-                task.resume()
-            }
-        } else {
-            task.resume()
-        }
+        task.resume()
     }
 }

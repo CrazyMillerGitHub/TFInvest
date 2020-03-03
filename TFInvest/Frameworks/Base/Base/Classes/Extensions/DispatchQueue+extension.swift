@@ -36,7 +36,7 @@ public extension DispatchQueue {
 }
 
 public extension DispatchQueue {
-    
+
     static func registerDetection(of queue: DispatchQueue) {
         _registerDetection(of: [queue], key: key)
     }
