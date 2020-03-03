@@ -13,6 +13,7 @@ PODS:
   - R.swift.Library (5.1.0)
   - Services (0.0.1):
     - Base
+    - Core
   - SwiftLint (0.39.1)
 
 DEPENDENCIES:
@@ -49,9 +50,9 @@ SPEC CHECKSUMS:
   Core: fd16d80097c3da0d5c94095c920cc1c9b2673750
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
-  Services: dabe41f51e5821b82ca342286e4acdfc820306be
+  Services: 8a0cd57c3e17a23ea94911e305a0c3a65e10efb9
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
 PODFILE CHECKSUM: 78012db4ec5b0692296d0f24c9e21f502bbda8ef
 
-COCOAPODS: 1.9.0
+COCOAPODS: 1.8.4
