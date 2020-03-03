@@ -1,13 +1,13 @@
 //
 //  DispatchQueue+extension.swift
-//  Assembly
+//  Base
 //
 //  Created by Саидов Тимур on 03.03.2020.
 //
 
 import Foundation
 
-extension DispatchQueue {
+public extension DispatchQueue {
 
     private struct QueueReference { weak var queue: DispatchQueue? }
 
@@ -35,7 +35,7 @@ extension DispatchQueue {
     }
 }
 
-extension DispatchQueue {
+public extension DispatchQueue {
     
     static func registerDetection(of queue: DispatchQueue) {
         _registerDetection(of: [queue], key: key)
