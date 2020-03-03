@@ -1,6 +1,6 @@
 //
 //  TableViewAdapter.swift
-//  Assembly
+//  Base
 //
 //  Created by Саидов Тимур on 01.03.2020.
 //
