@@ -31,7 +31,20 @@ public class RequestSender: RequestSenderProtocol {
                 completionHandler(.failure(error))
                 return
             }
-            guard let data = data, let parsedModel = config.parser.parse(data: data) else {
+
+            // Проверка на ответ похожий на "[]"
+            guard let nonEmptyData = data, nonEmptyData.count != 2 else {
+                completionHandler(.failure(NetworkServiceError.emptyData))
+                return
+            }
+
+            // Проверка на ответ похожий на "Invalid API key"
+            if let wrongApiString = String(data: nonEmptyData, encoding: .utf8), wrongApiString == "Invalid API key" {
+                completionHandler(.failure(NetworkServiceError.wrongApiKey))
+                return
+            }
+
+            guard let parsedModel = config.parser.parse(data: nonEmptyData) else {
                 completionHandler(.failure(NetworkServiceError.decodeError("Received data can not be parsed.")))
                 return
             }

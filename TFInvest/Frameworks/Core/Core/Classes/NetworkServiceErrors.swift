@@ -11,4 +11,6 @@ import Foundation
 public enum NetworkServiceError: Error {
     case urlConstuctFailure(String)
     case decodeError(String)
+    case emptyData
+    case wrongApiKey
 }
