@@ -35,7 +35,7 @@ open class PinView: UIViewController {
     // return pinLable
     private lazy var pinLabel: UILabel = {
         let label = UILabel()
-        label.text = "Enter 4-pin"
+        label.text = R.string.localizable.four_pin()
         label.font = UIFont.roundedFont(24, weight: .bold)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
