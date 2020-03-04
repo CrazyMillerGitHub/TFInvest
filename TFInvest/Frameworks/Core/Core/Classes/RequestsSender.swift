@@ -28,24 +28,32 @@ public class RequestSender: RequestSenderProtocol {
 
         let task = URLSession.shared.dataTask(with: urlRequest) { (data: Data?, response: URLResponse?, error: Error?) in
             if let error = error {
-                completionHandler(.failure(error))
+                inQueue?.async {
+                    completionHandler(.failure(error))
+                }
                 return
             }
 
             // Проверка на ответ похожий на "[]"
             guard let nonEmptyData = data, nonEmptyData.count != 2 else {
-                completionHandler(.failure(NetworkServiceError.emptyData))
+                inQueue?.async {
+                    completionHandler(.failure(NetworkServiceError.emptyData))
+                }
                 return
             }
 
             // Проверка на ответ похожий на "Invalid API key"
             if let wrongApiString = String(data: nonEmptyData, encoding: .utf8), wrongApiString == "Invalid API key" {
-                completionHandler(.failure(NetworkServiceError.wrongApiKey))
+                inQueue?.async {
+                    completionHandler(.failure(NetworkServiceError.wrongApiKey))
+                }
                 return
             }
 
             guard let parsedModel = config.parser.parse(data: nonEmptyData) else {
-                completionHandler(.failure(NetworkServiceError.decodeError("Received data can not be parsed.")))
+                inQueue?.async {
+                    completionHandler(.failure(NetworkServiceError.decodeError("Received data can not be parsed.")))
+                }
                 return
             }
 
