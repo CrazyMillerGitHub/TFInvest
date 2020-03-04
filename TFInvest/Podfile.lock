@@ -7,12 +7,14 @@ PODS:
     - R.swift
   - Base (0.0.1)
   - Core (0.0.1):
+    - Base
     - R.swift
   - R.swift (5.1.0):
     - R.swift.Library (~> 5.1.0)
   - R.swift.Library (5.1.0)
   - Services (0.0.1):
     - Base
+    - Core
   - Stock (0.0.1):
     - Base
     - R.swift
@@ -52,7 +54,7 @@ SPEC CHECKSUMS:
   Assembly: 841d33138f24d143e7c0725a482f332beaa43cb8
   Authorization: 7d7aab2867befebe51e0e3f2d280e96835b6c18c
   Base: 8cf420445aa9a2cbcce0a16f27d8601a64d117eb
-  Core: fd16d80097c3da0d5c94095c920cc1c9b2673750
+  Core: b6db4f9876c647ccf2af7c6b555fa05003a17b67
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
   Services: dabe41f51e5821b82ca342286e4acdfc820306be
@@ -61,4 +63,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 7ae588d146bc1bbb245e36bcd71d2bf3660a26a1
 
-COCOAPODS: 1.9.0
+COCOAPODS: 1.8.4
