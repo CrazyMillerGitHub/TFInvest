@@ -90,7 +90,8 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "Core/Classes/**/*"
+  spec.source_files = 'Core/Classes/**/*.swift'
+  spec.resources = 'Core/Classes/**/*.{storyboard,xib,xcassets,strings}'
 
   # spec.public_header_files = "Classes/**/*.h"
 
