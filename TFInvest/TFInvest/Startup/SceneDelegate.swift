@@ -11,20 +11,20 @@ import Authorization
 import Assembly
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    
+    
+    // MARK: Public Properties
 
     var window: UIWindow?
+    
+    
+    // MARK: Public
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        let serviceContainer = ServiceContainer()
-        let moduleContainer = ModuleContainer(serviceContainer: serviceContainer)
-        let authAssembly = moduleContainer.authAssembly()
-        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-        window?.windowScene = windowScene
-        window?.rootViewController = authAssembly.configure()
-        
-        window?.makeKeyAndVisible()
-        
+        setupDIModuleContainer()
+        let authViewController = setupMainController()
+        setupWindow(windowScene, with: authViewController)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -54,5 +54,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
+    
+    
+    // MARK: Private
+    
+    private func setupDIModuleContainer() {
+        let container = DIModuleContainer.shared
+        container.register(AuthAssembly.self, instance: AuthAssembly())
+    }
+    
+    private func setupDIServiceContainer() {
+    }
+    
+    private func setupMainController() -> UIViewController {
+        let authAssembly = DIModuleContainer.shared.resolve(AuthAssembly.self)
+        return authAssembly.configure()
+    }
+    
+    private func setupWindow(_ windowScene: UIWindowScene, with viewController: UIViewController) {
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene = windowScene
+        window?.rootViewController = viewController
+        window?.makeKeyAndVisible()
+    }
 }

@@ -74,7 +74,6 @@ public protocol ServiceContainerProtocol {
 
 /// Ассемблы.
 public protocol ModuleAssemblyProtocol {
-    var moduleContainer: ModuleContainerProtocol? { get }
     func configure() -> UIViewController
     func configure(with model: TransitionModel) -> UIViewController
 }
