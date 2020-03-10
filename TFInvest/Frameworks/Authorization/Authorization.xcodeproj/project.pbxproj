@@ -10,7 +10,6 @@
 		7405D75D2409163B008C6693 /* Authorization.h in Headers */ = {isa = PBXBuildFile; fileRef = 7405D75B2409163B008C6693 /* Authorization.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7405D78424091A1B008C6693 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7405D77924091A1B008C6693 /* MainScreen.swift */; };
 		7405D78524091A1B008C6693 /* extension+textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7405D77B24091A1B008C6693 /* extension+textField.swift */; };
-		7405D78624091A1B008C6693 /* extension+font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7405D77C24091A1B008C6693 /* extension+font.swift */; };
 		7405D78724091A1B008C6693 /* extension+string.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7405D77D24091A1B008C6693 /* extension+string.swift */; };
 		7405D78824091A1B008C6693 /* extension+label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7405D77E24091A1B008C6693 /* extension+label.swift */; };
 		7405D78924091A1B008C6693 /* extension+stackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7405D77F24091A1B008C6693 /* extension+stackView.swift */; };
@@ -27,7 +26,6 @@
 		7405D75C2409163B008C6693 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7405D77924091A1B008C6693 /* MainScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		7405D77B24091A1B008C6693 /* extension+textField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension+textField.swift"; sourceTree = "<group>"; };
-		7405D77C24091A1B008C6693 /* extension+font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension+font.swift"; sourceTree = "<group>"; };
 		7405D77D24091A1B008C6693 /* extension+string.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension+string.swift"; sourceTree = "<group>"; };
 		7405D77E24091A1B008C6693 /* extension+label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension+label.swift"; sourceTree = "<group>"; };
 		7405D77F24091A1B008C6693 /* extension+stackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension+stackView.swift"; sourceTree = "<group>"; };
@@ -94,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				7405D77B24091A1B008C6693 /* extension+textField.swift */,
-				7405D77C24091A1B008C6693 /* extension+font.swift */,
 				7405D77D24091A1B008C6693 /* extension+string.swift */,
 				7405D77E24091A1B008C6693 /* extension+label.swift */,
 				7405D77F24091A1B008C6693 /* extension+stackView.swift */,
@@ -213,7 +210,6 @@
 				7405D78724091A1B008C6693 /* extension+string.swift in Sources */,
 				7405D78B24091A1B008C6693 /* PinView.swift in Sources */,
 				7405D78824091A1B008C6693 /* extension+label.swift in Sources */,
-				7405D78624091A1B008C6693 /* extension+font.swift in Sources */,
 				7405D78C24091A1B008C6693 /* KeychainService.swift in Sources */,
 				7405D78424091A1B008C6693 /* MainScreen.swift in Sources */,
 				7405D78524091A1B008C6693 /* extension+textField.swift in Sources */,

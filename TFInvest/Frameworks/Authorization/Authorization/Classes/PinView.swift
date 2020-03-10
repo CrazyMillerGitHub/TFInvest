@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Stock
 
 open class PinView: UIViewController {
 
@@ -182,7 +183,7 @@ private extension PinView {
 
     // MARK: - Present Main View
     func presentMainView() {
-        let presentView = MainView()
+        let presentView = UINavigationController(rootViewController: StockView())
         presentView.modalPresentationStyle = .fullScreen
         DispatchQueue.main.async {
             self.present(presentView, animated: true, completion: nil)

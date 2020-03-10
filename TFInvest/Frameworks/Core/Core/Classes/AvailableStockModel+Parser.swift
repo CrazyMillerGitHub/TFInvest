@@ -9,9 +9,9 @@
 import Foundation
 
 public struct AvailableStockModel: Decodable {
-    let description: String
-    let displaySymbol: String
-    let symbol: String
+    public let description: String
+    public let displaySymbol: String
+    public let symbol: String
 
     enum CodingKeys: String, CodingKey {
         case description, displaySymbol, symbol
