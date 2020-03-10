@@ -21,8 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let authAssembly = moduleContainer.authAssembly()
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = authAssembly.configure()
-        
+        window?.rootViewController = UserDefaults.standard.bool(forKey: "isUserRegistered") ? PinView(.authorized) : SignView()
         window?.makeKeyAndVisible()
         
     }
