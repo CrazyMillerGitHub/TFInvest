@@ -5,6 +5,7 @@ PODS:
   - Authorization (0.0.1):
     - Base
     - R.swift
+    - Stock
   - Base (0.0.1)
   - Core (0.0.1):
     - Base
@@ -18,6 +19,7 @@ PODS:
   - Stock (0.0.1):
     - Base
     - R.swift
+    - Services
   - SwiftLint (0.39.1)
 
 DEPENDENCIES:
@@ -52,15 +54,15 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Assembly: 841d33138f24d143e7c0725a482f332beaa43cb8
-  Authorization: 7d7aab2867befebe51e0e3f2d280e96835b6c18c
+  Authorization: 944a8a547a00bdb11c78f7d17e8e2c4fca586ec1
   Base: 8cf420445aa9a2cbcce0a16f27d8601a64d117eb
-  Core: b6db4f9876c647ccf2af7c6b555fa05003a17b67
+  Core: 90161313ea8d45190b7ebd0464e1dd6627b295a6
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
-  Services: dabe41f51e5821b82ca342286e4acdfc820306be
-  Stock: b273456e2643b68b3f452ecfc8d69b3d83123c81
+  Services: 8a0cd57c3e17a23ea94911e305a0c3a65e10efb9
+  Stock: 964f2e92c20c165bbe4b08f1eb103a14252c880b
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: 7ae588d146bc1bbb245e36bcd71d2bf3660a26a1
+PODFILE CHECKSUM: 1b67881d4914f2e75837b38da8dd05f913684281
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.0
