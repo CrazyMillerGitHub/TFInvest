@@ -1,21 +1,35 @@
 PODS:
+  - Assembly (0.0.1):
+    - Authorization
+    - Base
   - Authorization (0.0.1):
+    - Base
     - R.swift
+    - Stock
   - Base (0.0.1)
   - Core (0.0.1):
+    - Base
     - R.swift
   - R.swift (5.1.0):
     - R.swift.Library (~> 5.1.0)
   - R.swift.Library (5.1.0)
-  - Services (0.0.1)
+  - Services (0.0.1):
+    - Base
+    - Core
+  - Stock (0.0.1):
+    - Base
+    - R.swift
+    - Services
   - SwiftLint (0.39.1)
 
 DEPENDENCIES:
-  - Authorization (from `../Frameworks/Authorization/`)
-  - Base (from `../Frameworks/Base/`)
-  - Core (from `../Frameworks/Core/`)
+  - Assembly (from `Frameworks/Assembly/`)
+  - Authorization (from `Frameworks/Authorization/`)
+  - Base (from `Frameworks/Base/`)
+  - Core (from `Frameworks/Core/`)
   - R.swift
-  - Services (from `../Frameworks/Services/`)
+  - Services (from `Frameworks/Services/`)
+  - Stock (from `Frameworks/Stock/`)
   - SwiftLint
 
 SPEC REPOS:
@@ -25,24 +39,30 @@ SPEC REPOS:
     - SwiftLint
 
 EXTERNAL SOURCES:
+  Assembly:
+    :path: Frameworks/Assembly/
   Authorization:
-    :path: "../Frameworks/Authorization/"
+    :path: Frameworks/Authorization/
   Base:
-    :path: "../Frameworks/Base/"
+    :path: Frameworks/Base/
   Core:
-    :path: "../Frameworks/Core/"
+    :path: Frameworks/Core/
   Services:
-    :path: "../Frameworks/Services/"
+    :path: Frameworks/Services/
+  Stock:
+    :path: Frameworks/Stock/
 
 SPEC CHECKSUMS:
-  Authorization: d606d5f909eb488268ccfa0b64c79c9ae0da0b31
+  Assembly: 841d33138f24d143e7c0725a482f332beaa43cb8
+  Authorization: 944a8a547a00bdb11c78f7d17e8e2c4fca586ec1
   Base: 8cf420445aa9a2cbcce0a16f27d8601a64d117eb
-  Core: fd16d80097c3da0d5c94095c920cc1c9b2673750
+  Core: 90161313ea8d45190b7ebd0464e1dd6627b295a6
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
-  Services: 0d86a4507df0823654e8e9d8c0d9523360c3ad48
+  Services: 8a0cd57c3e17a23ea94911e305a0c3a65e10efb9
+  Stock: 964f2e92c20c165bbe4b08f1eb103a14252c880b
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: 720bd839543e83f2b78fdec1cb8333ee5e1f4122
+PODFILE CHECKSUM: 1b67881d4914f2e75837b38da8dd05f913684281
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.0

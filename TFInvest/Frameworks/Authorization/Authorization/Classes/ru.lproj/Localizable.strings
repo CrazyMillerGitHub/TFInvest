@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  Authorization
+
+  Created by Михаил Борисов on 02.03.2020.
+  Copyright © 2020 Mikhail Borisov. All rights reserved.
+*/
+"email" = "Емэйл";
+"password" = "Пароль";
+"four_pin" = "Введите 4-pin";
+"log_in" = "Войти";
+"log_out" = "Выйти";
+"confirm" = "Подвердить";
+
