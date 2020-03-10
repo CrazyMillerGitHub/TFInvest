@@ -8,17 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7470E00424044A0F00EEB330 /* Base.h in Headers */ = {isa = PBXBuildFile; fileRef = 7470E00224044A0F00EEB330 /* Base.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		749ED2282405BF0600245EA8 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749ED2272405BF0600245EA8 /* Assembly.swift */; };
 		749ED22A2405BF1900245EA8 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749ED2292405BF1900245EA8 /* Base.swift */; };
-		749ED22E2405C14200245EA8 /* extension+label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749ED22D2405C14200245EA8 /* extension+label.swift */; };
-		749ED2302405C17200245EA8 /* extension+font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749ED22F2405C17200245EA8 /* extension+font.swift */; };
-		749ED2322405C23400245EA8 /* extension+stackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749ED2312405C23400245EA8 /* extension+stackView.swift */; };
-		749ED2342405C2C900245EA8 /* extension+textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749ED2332405C2C900245EA8 /* extension+textField.swift */; };
-		749ED2372405C3EF00245EA8 /* ElasticButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749ED2362405C3EF00245EA8 /* ElasticButton.swift */; };
-		749ED2392405C48A00245EA8 /* SignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749ED2382405C48A00245EA8 /* SignView.swift */; };
-		749ED23B24061ADF00245EA8 /* PinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749ED23A24061ADE00245EA8 /* PinView.swift */; };
-		749F84882406D40B00436265 /* extension+string.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749F84872406D40B00436265 /* extension+string.swift */; };
-		74B8BF502407C97600ADEC95 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8BF4E2407C97600ADEC95 /* KeychainService.swift */; };
 		74B8BF512407C97600ADEC95 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B8BF4F2407C97600ADEC95 /* MainScreen.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,17 +16,7 @@
 		7470DFFF24044A0F00EEB330 /* Base.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Base.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7470E00224044A0F00EEB330 /* Base.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Base.h; sourceTree = "<group>"; };
 		7470E00324044A0F00EEB330 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		749ED2272405BF0600245EA8 /* Assembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Assembly.swift; path = Base/Classes/Assembly.swift; sourceTree = SOURCE_ROOT; };
 		749ED2292405BF1900245EA8 /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Base.swift; path = Base/Classes/Base.swift; sourceTree = SOURCE_ROOT; };
-		749ED22D2405C14200245EA8 /* extension+label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension+label.swift"; sourceTree = "<group>"; };
-		749ED22F2405C17200245EA8 /* extension+font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension+font.swift"; sourceTree = "<group>"; };
-		749ED2312405C23400245EA8 /* extension+stackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension+stackView.swift"; sourceTree = "<group>"; };
-		749ED2332405C2C900245EA8 /* extension+textField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension+textField.swift"; sourceTree = "<group>"; };
-		749ED2362405C3EF00245EA8 /* ElasticButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticButton.swift; sourceTree = "<group>"; };
-		749ED2382405C48A00245EA8 /* SignView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignView.swift; sourceTree = "<group>"; };
-		749ED23A24061ADE00245EA8 /* PinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinView.swift; sourceTree = "<group>"; };
-		749F84872406D40B00436265 /* extension+string.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension+string.swift"; sourceTree = "<group>"; };
-		74B8BF4E2407C97600ADEC95 /* KeychainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		74B8BF4F2407C97600ADEC95 /* MainScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,13 +60,8 @@
 		749ED22B2405BF1F00245EA8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				749ED2382405C48A00245EA8 /* SignView.swift */,
-				74B8BF4E2407C97600ADEC95 /* KeychainService.swift */,
 				74B8BF4F2407C97600ADEC95 /* MainScreen.swift */,
-				749ED23A24061ADE00245EA8 /* PinView.swift */,
-				749ED2362405C3EF00245EA8 /* ElasticButton.swift */,
 				749ED22C2405C12E00245EA8 /* extensions */,
-				749ED2272405BF0600245EA8 /* Assembly.swift */,
 				749ED2292405BF1900245EA8 /* Base.swift */,
 			);
 			path = Classes;
@@ -95,11 +70,6 @@
 		749ED22C2405C12E00245EA8 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
-				749ED22D2405C14200245EA8 /* extension+label.swift */,
-				749ED2312405C23400245EA8 /* extension+stackView.swift */,
-				749F84872406D40B00436265 /* extension+string.swift */,
-				749ED2332405C2C900245EA8 /* extension+textField.swift */,
-				749ED22F2405C17200245EA8 /* extension+font.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -185,17 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74B8BF512407C97600ADEC95 /* MainScreen.swift in Sources */,
-				749ED2372405C3EF00245EA8 /* ElasticButton.swift in Sources */,
 				749ED22A2405BF1900245EA8 /* Base.swift in Sources */,
-				749ED22E2405C14200245EA8 /* extension+label.swift in Sources */,
-				749ED2322405C23400245EA8 /* extension+stackView.swift in Sources */,
-				74B8BF502407C97600ADEC95 /* KeychainService.swift in Sources */,
-				749ED2302405C17200245EA8 /* extension+font.swift in Sources */,
-				749ED23B24061ADF00245EA8 /* PinView.swift in Sources */,
-				749F84882406D40B00436265 /* extension+string.swift in Sources */,
-				749ED2392405C48A00245EA8 /* SignView.swift in Sources */,
-				749ED2282405BF0600245EA8 /* Assembly.swift in Sources */,
-				749ED2342405C2C900245EA8 /* extension+textField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
