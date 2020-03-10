@@ -9,9 +9,10 @@
 import Foundation
 
 public struct AvailableExchangeModel: Decodable {
-    let code: String
-    let currency: String
-    let name: String
+
+    public let code: String
+    public let currency: String
+    public let name: String
 
     enum CodingKeys: String, CodingKey {
         case code, currency, name
