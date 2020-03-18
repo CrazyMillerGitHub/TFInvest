@@ -79,7 +79,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :path => '.' }
+  spec.source       = { :path => '*' }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -90,7 +90,8 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "Authorization/Classes/**/*"
+  spec.source_files = 'Authorization/Classes/**/*.swift'
+  spec.resources = 'Authorization/Classes/**/*.{storyboard,xib,xcassets,strings}'
 
   # spec.public_header_files = "Classes/**/*.h"
 
@@ -131,6 +132,25 @@ Pod::Spec.new do |spec|
   # spec.requires_arc = true
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  spec.dependency "R.swift"
+  spec.dependency "Base"
+  spec.dependency "Stock"
+  # R.swift
+
+  spec.dependency 'R.swift'
+
+  generated_file_path = "Authorization/Classes/R.generated.swift"
+  spec.prepare_command =
+  <<-CMD
+    touch "#{generated_file_path}"
+  CMD
+
+  r_swift_script = '"${PODS_ROOT}/R.swift/rswift" generate --disable-input-output-files-validation "${PODS_TARGET_SRCROOT}/Authorization/Classes/R.generated.swift" --accessLevel public'
+  spec.script_phases = [
+    {
+      :name => 'R.swift',
+      :script => r_swift_script,
+      :execution_position => :before_compile
+    }
+  ]
 
 end

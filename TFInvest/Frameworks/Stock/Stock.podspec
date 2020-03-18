@@ -136,8 +136,10 @@ Pod::Spec.new do |spec|
 
   # R.swift
 
-  spec.dependency 'R.swift'
+#  spec.dependency 'R.swift'
   spec.dependency "Services"
+
+  spec.dependency 'R.swift'
 
   generated_file_path = "Stock/Classes/R.generated.swift"
   spec.prepare_command =
