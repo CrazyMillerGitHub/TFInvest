@@ -11,22 +11,6 @@ import Authorization
 
 struct ModuleAssemblyFactory: FactoryProtocol {
     typealias `Type` = ModuleAssemblyProtocol
-<<<<<<< HEAD
-    
-    
-    // MARK: Public Properties
-
-    let type: `Type`.Type
-    
-    
-    // MARK: Private Properties
-    
-    private let resolve: (Resolver) -> `Type`
-    
-    
-    // MARK: Init
-    
-=======
 
     // MARK: Public Properties
 
@@ -38,17 +22,11 @@ struct ModuleAssemblyFactory: FactoryProtocol {
 
     // MARK: Init
 
->>>>>>> master
     init(_ type: `Type`.Type, resolve: @escaping (Resolver) -> Type) {
         self.type = type
         self.resolve = resolve
     }
-<<<<<<< HEAD
-    
-    
-=======
 
->>>>>>> master
     // MARK: - Factory Protocol
 
     func resolve(_ resolver: Resolver) -> `Type` {
@@ -57,28 +35,11 @@ struct ModuleAssemblyFactory: FactoryProtocol {
 }
 
 open class DIModuleContainer: Resolver {
-<<<<<<< HEAD
-    
-    
-=======
 
->>>>>>> master
     // MARK: Static Properties
 
     public static let shared = DIModuleContainer()
 
-<<<<<<< HEAD
-    
-    // MARK: Private Properties
-    
-    private var factories: [ModuleAssemblyFactory] = []
-
-    
-    // MARK: Init
-    
-    private init() {}
-
-=======
     // MARK: Private Properties
 
     private var factories: [ModuleAssemblyFactory] = []
@@ -86,7 +47,6 @@ open class DIModuleContainer: Resolver {
     // MARK: Init
 
     private init() {}
->>>>>>> master
 
     // MARK: Register
 
@@ -102,10 +62,6 @@ open class DIModuleContainer: Resolver {
         factories += [newFactory]
     }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> master
     // MARK: Resolver
 
     public func resolve<ServiceType: ModuleAssemblyProtocol>(_ type: ServiceType.Type) -> ServiceType {

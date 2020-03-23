@@ -13,19 +13,11 @@ public protocol Resolver {
     func resolve<ServiceType: ServiceAssemblyProtocol>(_ type: ServiceType.Type) -> ServiceType
 }
 public extension Resolver {
-<<<<<<< HEAD
-    
-    func resolve<ServiceType: ModuleAssemblyProtocol>(_ type: ServiceType.Type) -> ServiceType {
-        fatalError("implement resolve<ServiceType: ModuleAssemblyProtocol>() in ModuleAssembly")
-    }
-    
-=======
 
     func resolve<ServiceType: ModuleAssemblyProtocol>(_ type: ServiceType.Type) -> ServiceType {
         fatalError("implement resolve<ServiceType: ModuleAssemblyProtocol>() in ModuleAssembly")
     }
 
->>>>>>> master
     func resolve<ServiceType: ServiceAssemblyProtocol>(_ type: ServiceType.Type) -> ServiceType {
         fatalError("implement assembleModule() in ModuleAssembly")
     }

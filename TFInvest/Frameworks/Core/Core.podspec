@@ -89,13 +89,10 @@ Pod::Spec.new do |spec|
   #  For header files it will include any header in the folder.
   #  Not including the public_header_files will make all headers public.
   #
-
-<<<<<<< HEAD
+  
   spec.source_files = 'Core/Classes/**/*.swift'
   spec.resources = 'Core/Classes/**/*.{storyboard,xib,xcassets,strings}'
-=======
-  spec.source_files  = "Core/Classes/**/*"
->>>>>>> master
+
 
   # spec.public_header_files = "Classes/**/*.h"
 
@@ -136,12 +133,9 @@ Pod::Spec.new do |spec|
   # spec.requires_arc = true
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-<<<<<<< HEAD
-  spec.dependency "Base"
-  spec.dependency "R.swift"
-=======
+
   spec.dependency "R.swift"
   spec.dependency "Base"
->>>>>>> master
+
 
 end

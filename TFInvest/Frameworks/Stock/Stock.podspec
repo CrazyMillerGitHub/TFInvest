@@ -136,17 +136,10 @@ Pod::Spec.new do |spec|
 
   # R.swift
 
-<<<<<<< HEAD
   spec.dependency 'R.swift'
   spec.dependency "Services"
 
-=======
-#  spec.dependency 'R.swift'
-  spec.dependency "Services"
 
-  spec.dependency 'R.swift'
-
->>>>>>> master
   generated_file_path = "Stock/Classes/R.generated.swift"
   spec.prepare_command =
   <<-CMD
