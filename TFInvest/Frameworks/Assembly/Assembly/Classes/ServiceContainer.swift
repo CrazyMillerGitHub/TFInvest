@@ -12,7 +12,6 @@ import Authorization
 struct ServiceAssemblyFactory: FactoryProtocol {
     typealias `Type` = ServiceAssemblyProtocol
 
-
     // MARK: Public Properties
 
     let type: `Type`.Type

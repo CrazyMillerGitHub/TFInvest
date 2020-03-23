@@ -15,9 +15,9 @@ Pod::Spec.new do |spec|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  spec.name         = "Authorization"
+  spec.name         = "News"
   spec.version      = "0.0.1"
-  spec.summary      = "A short description of Authorization."
+  spec.summary      = "A short description of News."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -27,7 +27,7 @@ Pod::Spec.new do |spec|
   spec.description  = <<-DESC
   Make our authorization faster
                    DESC
-  spec.homepage     = "http://EXAMPLE/Authorization"
+  spec.homepage     = "http://EXAMPLE/News"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -90,8 +90,8 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files = 'Authorization/Classes/**/*.swift'
-  spec.resources = 'Authorization/Classes/**/*.{storyboard,xib,xcassets,strings}'
+  spec.source_files = 'News/Classes/**/*.swift'
+  spec.resources = 'News/Classes/**/*.{storyboard,xib,xcassets,strings}'
 
   # spec.public_header_files = "Classes/**/*.h"
 
@@ -132,21 +132,20 @@ Pod::Spec.new do |spec|
   # spec.requires_arc = true
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  spec.dependency "Base"
-  spec.dependency "Stock"
-  spec.dependency "News"
+  spec.dependency 'Kingfisher/SwiftUI'
 
   # R.swift
 
   spec.dependency 'R.swift'
 
-  generated_file_path = "Authorization/Classes/R.generated.swift"
+
+  generated_file_path = "News/Classes/R.generated.swift"
   spec.prepare_command =
   <<-CMD
     touch "#{generated_file_path}"
   CMD
 
-  r_swift_script = '"${PODS_ROOT}/R.swift/rswift" generate --disable-input-output-files-validation "${PODS_TARGET_SRCROOT}/Authorization/Classes/R.generated.swift" --accessLevel public'
+  r_swift_script = '"${PODS_ROOT}/R.swift/rswift" generate --disable-input-output-files-validation "${PODS_TARGET_SRCROOT}/News/Classes/R.generated.swift" --accessLevel public'
   spec.script_phases = [
     {
       :name => 'R.swift',

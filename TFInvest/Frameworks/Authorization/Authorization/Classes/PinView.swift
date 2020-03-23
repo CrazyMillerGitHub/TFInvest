@@ -8,6 +8,28 @@
 
 import UIKit
 import Stock
+import News
+import SwiftUI
+
+// MARK: - MainTabBarController
+open class MainTabBarController: UITabBarController {
+
+    open override func viewDidLoad() {
+        let firstViewController = UINavigationController(rootViewController: StockView())
+
+        firstViewController.tabBarItem = UITabBarItem(title: "Stock", image: nil, tag: 0)
+
+        let postsView = PostsView()
+
+        let secondViewController = UIHostingController(rootView: postsView)
+
+        secondViewController.tabBarItem = UITabBarItem(title: "News", image: nil, tag: 1)
+
+        let tabBarList = [firstViewController, secondViewController]
+
+        viewControllers = tabBarList
+    }
+}
 
 open class PinView: UIViewController {
 
@@ -183,7 +205,7 @@ private extension PinView {
 
     // MARK: - Present Main View
     func presentMainView() {
-        let presentView = UINavigationController(rootViewController: StockView())
+        let presentView = MainTabBarController()
         presentView.modalPresentationStyle = .fullScreen
         DispatchQueue.main.async {
             self.present(presentView, animated: true, completion: nil)
