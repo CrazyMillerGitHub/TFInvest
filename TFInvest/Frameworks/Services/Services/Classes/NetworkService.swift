@@ -34,4 +34,25 @@ open class NetworkService: NetworkServiceProtocol {
         }
     }
 
+    public func loadGeneralNews(completionHandler: @escaping (Result<[NewsModel], Error>) -> Void) {
+        let config = RequestsFactory.FinhubAPIRequests.generalNewsConfig()
+        self.requestSender.send(config: config) { (result) in
+            completionHandler(result)
+        }
+    }
+
+    public func loadCompanyNews(companySymbol: String, completionHandler: @escaping (Result<[NewsModel], Error>) -> Void) {
+        let config = RequestsFactory.FinhubAPIRequests.companyNewsConfig(companySymbol: companySymbol)
+        self.requestSender.send(config: config) { (result) in
+           completionHandler(result)
+        }
+    }
+
+    public func loadCompanyProfile(companySymbol: String, completionHandler: @escaping (Result<CompanyProfileModel, Error>) -> Void) {
+        let config = RequestsFactory.FinhubAPIRequests.companyProfileConfig(companySymbol: companySymbol)
+        self.requestSender.send(config: config) { (result) in
+           completionHandler(result)
+        }
+    }
+
 }
