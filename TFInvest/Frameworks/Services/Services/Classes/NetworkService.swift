@@ -12,6 +12,9 @@ import Core
 public protocol NetworkServiceProtocol {
     func loadAvailableExchanges(completionHandler: @escaping (Result<[AvailableExchangeModel], Error>) -> Void)
     func loadAvailableStocks(exchangeCode: String, completionHandler: @escaping (Result<[AvailableStockModel], Error>) -> Void)
+    func loadGeneralNews(completionHandler: @escaping (Result<[NewsModel], Error>) -> Void)
+    func loadCompanyNews(companySymbol: String, completionHandler: @escaping (Result<[NewsModel], Error>) -> Void)
+    func loadCompanyProfile(companySymbol: String, completionHandler: @escaping (Result<CompanyProfileModel, Error>) -> Void)
 }
 
 open class NetworkService: NetworkServiceProtocol {
@@ -31,6 +34,27 @@ open class NetworkService: NetworkServiceProtocol {
         let config = RequestsFactory.FinhubAPIRequests.availableStocksConfig(exchangeCode: exchangeCode)
         self.requestSender.send(config: config) { (result) in
             completionHandler(result)
+        }
+    }
+
+    public func loadGeneralNews(completionHandler: @escaping (Result<[NewsModel], Error>) -> Void) {
+        let config = RequestsFactory.FinhubAPIRequests.generalNewsConfig()
+        self.requestSender.send(config: config) { (result) in
+            completionHandler(result)
+        }
+    }
+
+    public func loadCompanyNews(companySymbol: String, completionHandler: @escaping (Result<[NewsModel], Error>) -> Void) {
+        let config = RequestsFactory.FinhubAPIRequests.companyNewsConfig(companySymbol: companySymbol)
+        self.requestSender.send(config: config) { (result) in
+           completionHandler(result)
+        }
+    }
+
+    public func loadCompanyProfile(companySymbol: String, completionHandler: @escaping (Result<CompanyProfileModel, Error>) -> Void) {
+        let config = RequestsFactory.FinhubAPIRequests.companyProfileConfig(companySymbol: companySymbol)
+        self.requestSender.send(config: config) { (result) in
+           completionHandler(result)
         }
     }
 
