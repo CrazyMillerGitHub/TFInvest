@@ -48,5 +48,4 @@ extension PostsViewModel: PostsViewModelProtocol {
 
         })
     }
-
 }

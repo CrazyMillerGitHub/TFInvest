@@ -8,6 +8,8 @@
 
 import UIKit
 import Core
+import News
+import SwiftUI
 
 open class StockViewModel: NSObject, UITableViewDelegate, UITableViewDataSource, FetchDataPrototcol {
 
@@ -41,6 +43,13 @@ open class StockViewModel: NSObject, UITableViewDelegate, UITableViewDataSource,
                 return nil
         }
         return view
+    }
+
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cellItems = !fileteredItems.isEmpty ? fileteredItems : items
+        let data = cellItems[indexPath.row]
+        NotificationCenter.default.post(name: Notification.Name("recieveState"), object:
+            self, userInfo: [UUID(): data.symbol])
     }
 
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

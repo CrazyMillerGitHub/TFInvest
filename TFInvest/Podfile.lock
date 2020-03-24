@@ -25,6 +25,7 @@ PODS:
     - Core
   - Stock (0.0.1):
     - Base
+    - News
     - R.swift
     - Services
   - SwiftLint (0.39.1)
@@ -74,7 +75,7 @@ SPEC CHECKSUMS:
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
   Services: 8a0cd57c3e17a23ea94911e305a0c3a65e10efb9
-  Stock: 964f2e92c20c165bbe4b08f1eb103a14252c880b
+  Stock: 9074db3bbb1f697bb18f2beab09140ddd5f71169
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
 PODFILE CHECKSUM: c46d6a73ffd87150f84160f6a8b64bee531f935c
