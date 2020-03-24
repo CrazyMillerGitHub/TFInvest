@@ -12,6 +12,9 @@ import Core
 public protocol NetworkServiceProtocol {
     func loadAvailableExchanges(completionHandler: @escaping (Result<[AvailableExchangeModel], Error>) -> Void)
     func loadAvailableStocks(exchangeCode: String, completionHandler: @escaping (Result<[AvailableStockModel], Error>) -> Void)
+    func loadGeneralNews(completionHandler: @escaping (Result<[NewsModel], Error>) -> Void)
+    func loadCompanyNews(companySymbol: String, completionHandler: @escaping (Result<[NewsModel], Error>) -> Void)
+    func loadCompanyProfile(companySymbol: String, completionHandler: @escaping (Result<CompanyProfileModel, Error>) -> Void)
 }
 
 open class NetworkService: NetworkServiceProtocol {
