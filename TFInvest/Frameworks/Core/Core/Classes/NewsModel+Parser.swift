@@ -14,12 +14,13 @@ public struct NewsModel: Identifiable {
     public let datetime: Int
     public let id: Int
     public let image: String
+    public let headline: String
     public let related: String?
     public let source: String?
     public let summary: String?
     public let url: String
 
-    public init(category: String, datetime: Int, id: Int, image: String, related: String?, source: String?, summary: String?, url: String) {
+    public init(category: String, datetime: Int, id: Int, image: String, related: String?, source: String?, summary: String?, url: String, headline: String) {
         self.category = category
         self.datetime = datetime
         self.id = id
@@ -28,13 +29,14 @@ public struct NewsModel: Identifiable {
         self.source = source
         self.summary = summary
         self.url = url
+        self.headline = headline
     }
 }
 
 extension NewsModel: Decodable {
 
     enum CodingKeys: String, CodingKey {
-        case category, datetime, id, image, related, source, summary, url
+        case category, datetime, id, image, related, source, summary, url, headline
     }
 
     public init(from decoder: Decoder) throws {
@@ -48,8 +50,9 @@ extension NewsModel: Decodable {
         let source = try container.decode(String.self, forKey: .source)
         let summary = try container.decode(String.self, forKey: .summary)
         let url = try container.decode(String.self, forKey: .url)
+        let headline = try container.decode(String.self, forKey: .headline)
 
-        self.init(category: category, datetime: datetime, id: id, image: image, related: related, source: source, summary: summary, url: url)
+        self.init(category: category, datetime: datetime, id: id, image: image, related: related, source: source, summary: summary, url: url, headline: headline)
     }
 }
 

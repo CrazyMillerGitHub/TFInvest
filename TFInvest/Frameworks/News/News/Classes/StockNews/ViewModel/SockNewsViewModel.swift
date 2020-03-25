@@ -19,20 +19,20 @@ protocol StockNewsViewModelProtocol {
     func stockInfo()
 }
 
-class StockNewsViewModel: ObservableObject {
+final class StockNewsViewModel: ObservableObject {
 
     let networkService = NetworkService()
 
-    let commapyIDX: String
+    let companyIDX: String
 
     @Published var posts: [NewsModel]
 
-    @Published var company = CompanyProfileModel(address: "", city: "", country: "", currency: "", cusip: "", description: "", employeeTotal: "", exchange: "", ggroup: "", gind: "", gsector: "", gsubind: "", ipo: "", isin: "", marketCapitalization: 0, naics: "", naicsNationalIndustry: "", naicsSector: "", naicsSubsector: "", name: "", phone: "", sedol: "", shareOutstanding: 0, state: "", ticker: "", weburl: "")
+    @Published var company = CompanyProfileModel()
 
     var task: AnyCancellable?
 
-    init(commapyIDX: String, posts: [NewsModel] = []) {
-        self.commapyIDX = commapyIDX
+    init(companyIDX: String, posts: [NewsModel] = []) {
+        self.companyIDX = companyIDX
         self.posts = posts
     }
 
@@ -42,7 +42,8 @@ extension StockNewsViewModel: StockNewsViewModelProtocol {
 
     func stockInfo() {
 
-        networkService.loadCompanyProfile(companySymbol: "AAPL") { (result) in
+        networkService.loadCompanyProfile(companySymbol: companyIDX) { (result) in
+
             switch result {
             case .success(let company):
                 self.company = company
@@ -54,7 +55,8 @@ extension StockNewsViewModel: StockNewsViewModelProtocol {
 
     func fetchPosts() {
 
-        networkService.loadCompanyNews(companySymbol: "AAPL") { (result) in
+        networkService.loadCompanyNews(companySymbol: companyIDX) { (result) in
+
             switch result {
             case .success(let posts):
                 self.posts = posts

@@ -52,7 +52,7 @@ final class ExchangeCell: UICollectionViewCell {
         // set size for company label
         companyLabel.frame.size = CGSize(width: frame.width, height: frame.height)
         // set background color to light gray (alpha = 0.2)
-        layer.backgroundColor = UIColor.black.withAlphaComponent(0.2).cgColor
+        layer.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2).cgColor
         // set roudned corner for layer
         layer.cornerRadius = frame.height / 2
         // add subview
@@ -63,4 +63,13 @@ final class ExchangeCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
+}
+
+extension UIColor {
+    static var random: UIColor {
+        return UIColor(red: .random(in: 0.4...1),
+                       green: .random(in: 0.4...1),
+                       blue: .random(in: 0.4...1),
+                       alpha: 1.0)
+    }
 }

@@ -29,8 +29,15 @@ extension UILabel {
         label.numberOfLines = 1
         label.font = UIFont.roundedFont(14, weight: .medium)
         label.textColor = UIColor.black.withAlphaComponent(0.8)
-        label.layer.cornerRadius = 25
-        label.layer.backgroundColor = UIColor.black.withAlphaComponent(0.2).cgColor
+        // set gradient background
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor.random.cgColor, UIColor.random.cgColor]
+        gradientLayer.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.0)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
+        gradientLayer.cornerRadius = 25
+        label.layer.insertSublayer(gradientLayer, at: 0)
+
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }
