@@ -17,6 +17,7 @@ public struct StockNews: View {
 
     public init(companyIDX: String) {
         viewModel = StockNewsViewModel(companyIDX: companyIDX)
+
         self.companyIDX = companyIDX
     }
 
@@ -85,6 +86,7 @@ public struct PostsRow: View {
                     Text("Read more")
                         .font(.system(.subheadline, design: .rounded))
                 }.lineSpacing(30)
+
             }
         }
     }

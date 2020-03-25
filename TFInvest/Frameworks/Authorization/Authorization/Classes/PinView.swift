@@ -113,7 +113,12 @@ open class PinView: UIViewController {
         textFieldCollection.forEach { [weak self] pinTextField in
             self?.pinStackView.addArrangedSubview(pinTextField)
             pinTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+            // accessibilityIdentifier for UI Testing
+            pinTextField.accessibilityIdentifier = "pin_textfield_\(pinTextField.tag)"
         }
+        // accessibilityIdentifier for UI Testing
+        pinLabel.accessibilityIdentifier = "pin_label"
+        confirmButton.accessibilityIdentifier = "confirm_button"
     }
 
     override open func viewDidLoad() {

@@ -43,6 +43,7 @@ extension StockNewsViewModel: StockNewsViewModelProtocol {
     func stockInfo() {
 
         networkService.loadCompanyProfile(companySymbol: companyIDX) { (result) in
+
             switch result {
             case .success(let company):
                 self.company = company
@@ -55,6 +56,7 @@ extension StockNewsViewModel: StockNewsViewModelProtocol {
     func fetchPosts() {
 
         networkService.loadCompanyNews(companySymbol: companyIDX) { (result) in
+
             switch result {
             case .success(let posts):
                 self.posts = posts

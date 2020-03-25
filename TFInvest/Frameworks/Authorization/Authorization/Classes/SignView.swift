@@ -44,6 +44,11 @@ open class SignView: UIViewController {
         // add target to signInButton
         signButton.addTarget(self, action: #selector(signAction), for: .touchUpInside)
         prepareDelegate()
+        // accessibilityIdentifiers for UI Testing
+        emailTextField.accessibilityIdentifier = "email_textfield"
+        passwordTextField.accessibilityIdentifier = "password_textfield"
+        signButton.accessibilityIdentifier = "sign_button"
+        slider.accessibilityIdentifier = "pin_slider"
     }
 
     private func prepareDelegate() {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		163472EC22E6B8A9FD7BCCC9 /* Pods_TFInvest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169990AB1F566B9FD1B4F591 /* Pods_TFInvest.framework */; };
+		57D930D2242A8DCC000062AF /* TFInvestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D930D1242A8DCC000062AF /* TFInvestUITests.swift */; };
 		7470CC3624030F4E00A91746 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7470CC3524030F4E00A91746 /* AppDelegate.swift */; };
 		7470CC3824030F4E00A91746 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7470CC3724030F4E00A91746 /* SceneDelegate.swift */; };
 		7470CC3A24030F4E00A91746 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7470CC3924030F4E00A91746 /* MainView.swift */; };
@@ -17,8 +18,21 @@
 		74B3EB68240D86C4000A1B53 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B3EB67240D86C4000A1B53 /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		57D930D4242A8DCC000062AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7470CC2A24030F4E00A91746 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7470CC3124030F4E00A91746;
+			remoteInfo = TFInvest;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		169990AB1F566B9FD1B4F591 /* Pods_TFInvest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFInvest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57D930CF242A8DCC000062AF /* TFInvestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TFInvestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		57D930D1242A8DCC000062AF /* TFInvestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFInvestUITests.swift; sourceTree = "<group>"; };
+		57D930D3242A8DCC000062AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7470CC3224030F4E00A91746 /* TFInvest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TFInvest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7470CC3524030F4E00A91746 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7470CC3724030F4E00A91746 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +47,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		57D930CC242A8DCC000062AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7470CC2F24030F4E00A91746 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -61,10 +82,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		57D930D0242A8DCC000062AF /* TFInvestUITests */ = {
+			isa = PBXGroup;
+			children = (
+				57D930D1242A8DCC000062AF /* TFInvestUITests.swift */,
+				57D930D3242A8DCC000062AF /* Info.plist */,
+			);
+			path = TFInvestUITests;
+			sourceTree = "<group>";
+		};
 		7470CC2924030F4E00A91746 = {
 			isa = PBXGroup;
 			children = (
 				7470CC3424030F4E00A91746 /* TFInvest */,
+				57D930D0242A8DCC000062AF /* TFInvestUITests */,
 				7470CC3324030F4E00A91746 /* Products */,
 				1EA3F9AE39CCDA0D6246226B /* Pods */,
 				245960C63A9BA537E5E7D7E3 /* Frameworks */,
@@ -75,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				7470CC3224030F4E00A91746 /* TFInvest.app */,
+				57D930CF242A8DCC000062AF /* TFInvestUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,6 +153,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		57D930CE242A8DCC000062AF /* TFInvestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57D930D6242A8DCC000062AF /* Build configuration list for PBXNativeTarget "TFInvestUITests" */;
+			buildPhases = (
+				57D930CB242A8DCC000062AF /* Sources */,
+				57D930CC242A8DCC000062AF /* Frameworks */,
+				57D930CD242A8DCC000062AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				57D930D5242A8DCC000062AF /* PBXTargetDependency */,
+			);
+			name = TFInvestUITests;
+			productName = TFInvestUITests;
+			productReference = 57D930CF242A8DCC000062AF /* TFInvestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		7470CC3124030F4E00A91746 /* TFInvest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7470CC4624030F4F00A91746 /* Build configuration list for PBXNativeTarget "TFInvest" */;
@@ -152,6 +202,10 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Mikhail Borisov";
 				TargetAttributes = {
+					57D930CE242A8DCC000062AF = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = 7470CC3124030F4E00A91746;
+					};
 					7470CC3124030F4E00A91746 = {
 						CreatedOnToolsVersion = 11.3;
 					};
@@ -171,11 +225,19 @@
 			projectRoot = "";
 			targets = (
 				7470CC3124030F4E00A91746 /* TFInvest */,
+				57D930CE242A8DCC000062AF /* TFInvestUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		57D930CD242A8DCC000062AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7470CC3024030F4E00A91746 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -238,7 +300,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/TFInvest/R.generated.swift",
+				$SRCROOT/TFInvest/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -269,6 +331,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		57D930CB242A8DCC000062AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57D930D2242A8DCC000062AF /* TFInvestUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7470CC2E24030F4E00A91746 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -281,6 +351,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		57D930D5242A8DCC000062AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7470CC3124030F4E00A91746 /* TFInvest */;
+			targetProxy = 57D930D4242A8DCC000062AF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7470CC3B24030F4E00A91746 /* Main.storyboard */ = {
@@ -302,6 +380,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		57D930D7242A8DCC000062AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TFInvestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dsgnmike.TFInvestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TFInvest;
+			};
+			name = Debug;
+		};
+		57D930D8242A8DCC000062AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TFInvestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dsgnmike.TFInvestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TFInvest;
+			};
+			name = Release;
+		};
 		7470CC4424030F4F00A91746 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -457,6 +571,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		57D930D6242A8DCC000062AF /* Build configuration list for PBXNativeTarget "TFInvestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57D930D7242A8DCC000062AF /* Debug */,
+				57D930D8242A8DCC000062AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7470CC2D24030F4E00A91746 /* Build configuration list for PBXProject "TFInvest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
