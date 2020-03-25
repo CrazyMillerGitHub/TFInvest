@@ -7,10 +7,12 @@
 //
 
 import Combine
+import Services
+import Core
 
 protocol StockNewsViewModelProtocol {
 
-    var posts: [Post] { get }
+    var posts: [NewsModel] { get }
 
     func fetchPosts()
 
@@ -19,25 +21,19 @@ protocol StockNewsViewModelProtocol {
 
 class StockNewsViewModel: ObservableObject {
 
+    let networkService = NetworkService()
+
     let commapyIDX: String
 
-    @Published var posts = [Post]()
+    @Published var posts: [NewsModel]
 
-    @Published var company = Company(name: "", ticker: "", description: "")
+    @Published var company = CompanyProfileModel(address: "", city: "", country: "", currency: "", cusip: "", description: "", employeeTotal: "", exchange: "", ggroup: "", gind: "", gsector: "", gsubind: "", ipo: "", isin: "", marketCapitalization: 0, naics: "", naicsNationalIndustry: "", naicsSector: "", naicsSubsector: "", name: "", phone: "", sedol: "", shareOutstanding: 0, state: "", ticker: "", weburl: "")
 
     var task: AnyCancellable?
 
-    let postsAPI: String
-
-    let infoAPI: String
-
-    let token = "&token=bpdq8nfrh5rauiikjq80"
-
-    init(commapyIDX: String) {
+    init(commapyIDX: String, posts: [NewsModel] = []) {
         self.commapyIDX = commapyIDX
-        self.infoAPI = "https://finnhub.io/api/v1/stock/profile?symbol=\(commapyIDX)"
-        self.postsAPI = "​https://finnhub.io/api/v1/news/\(commapyIDX)"
-        fetchPosts()
+        self.posts = posts
     }
 
 }
@@ -46,38 +42,25 @@ extension StockNewsViewModel: StockNewsViewModelProtocol {
 
     func stockInfo() {
 
-        self.task = nil
-
-        self.company = Company(name: "", ticker: "", description: "")
-
-        guard let url = URL(string: "https://finnhub.io/api/v1/stock/profile?symbol=\(commapyIDX)&token=bpdq8nfrh5rauiikjq80") else {
-            return
-
+        networkService.loadCompanyProfile(companySymbol: "AAPL") { (result) in
+            switch result {
+            case .success(let company):
+                self.company = company
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
         }
-
-        self.task = CompanyService.shared.getCompany(url: url).sink(receiveCompletion: { (completion) in
-            print(completion)
-        }, receiveValue: { company in
-
-            self.company = company
-        })
     }
 
     func fetchPosts() {
 
-        self.task = nil
-
-        self.posts = []
-
-        guard let url = URL(string: postsAPI + token) else { return }
-
-        self.task = PostsService.shared.getPosts(url: url).sink(receiveCompletion: { completion in
-            print(completion)
-
-        }, receiveValue: { posts in
-
-            self.posts = []
-
-        })
+        networkService.loadCompanyNews(companySymbol: "AAPL") { (result) in
+            switch result {
+            case .success(let posts):
+                self.posts = posts
+            case.failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }

@@ -7,7 +7,8 @@
 
 import Foundation
 
-public struct CompanyProfileModel: Decodable {
+public struct CompanyProfileModel {
+
     public let address: String
     public let city: String
     public let country: String
@@ -35,6 +36,39 @@ public struct CompanyProfileModel: Decodable {
     public let ticker: String
     public let weburl: String
 
+    public init(address: String, city: String, country: String, currency: String, cusip: String, description: String, employeeTotal: String, exchange: String, ggroup: String, gind: String, gsector: String, gsubind: String, ipo: String, isin: String, marketCapitalization: Int, naics: String, naicsNationalIndustry: String, naicsSector: String, naicsSubsector: String, name: String, phone: String, sedol: String, shareOutstanding: Double, state: String, ticker: String, weburl: String) {
+        self.address = address
+        self.city = city
+        self.country = country
+        self.currency = currency
+        self.cusip = cusip
+        self.description = description
+        self.employeeTotal = employeeTotal
+        self.exchange = exchange
+        self.ggroup = ggroup
+        self.gind = gind
+        self.gsector = gsector
+        self.gsubind = gsubind
+        self.ipo = ipo
+        self.isin = isin
+        self.marketCapitalization = marketCapitalization
+        self.naics = naics
+        self.naicsNationalIndustry = naicsNationalIndustry
+        self.naicsSector = naicsSector
+        self.naicsSubsector = naicsSubsector
+        self.name = name
+        self.phone = phone
+        self.sedol = sedol
+        self.shareOutstanding = shareOutstanding
+        self.state = state
+        self.ticker = ticker
+        self.weburl = weburl
+    }
+
+}
+
+extension CompanyProfileModel: Decodable {
+
     enum CodingKeys: String, CodingKey {
         case address, city, country, currency, cusip, description, employeeTotal, exchange, ggroup, gind, gsector, gsubind, ipo, isin, marketCapitalization, naics, naicsNationalIndustry, naicsSector, naicsSubsector, name, phone, sedol, shareOutstanding, state, ticker, weburl
     }
@@ -42,33 +76,34 @@ public struct CompanyProfileModel: Decodable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
-        self.address = try container.decode(String.self, forKey: .address)
-        self.city = try container.decode(String.self, forKey: .city)
-        self.country = try container.decode(String.self, forKey: .country)
-        self.currency = try container.decode(String.self, forKey: .currency)
-        self.cusip = try container.decode(String.self, forKey: .cusip)
-        self.description = try container.decode(String.self, forKey: .description)
-        self.employeeTotal = try container.decode(String.self, forKey: .employeeTotal)
-        self.exchange = try container.decode(String.self, forKey: .exchange)
-        self.ggroup = try container.decode(String.self, forKey: .ggroup)
-        self.gind = try container.decode(String.self, forKey: .gind)
-        self.gsector = try container.decode(String.self, forKey: .gsector)
-        self.gsubind = try container.decode(String.self, forKey: .gsubind)
-        self.ipo = try container.decode(String.self, forKey: .ipo)
-        self.isin = try container.decode(String.self, forKey: .isin)
-        self.marketCapitalization = try container.decode(Int.self, forKey: .marketCapitalization)
-        self.naics = try container.decode(String.self, forKey: .naics)
-        self.naicsNationalIndustry = try container.decode(String.self, forKey: .naicsNationalIndustry)
-        self.naicsSector = try container.decode(String.self, forKey: .naicsSector)
-        self.naicsSubsector = try container.decode(String.self, forKey: .naicsSubsector)
-        self.name = try container.decode(String.self, forKey: .name)
-        self.phone = try container.decode(String.self, forKey: .phone)
-        self.sedol = try container.decode(String.self, forKey: .sedol)
-        self.shareOutstanding = try container.decode(Double.self, forKey: .shareOutstanding)
-        self.state = try container.decode(String.self, forKey: .state)
-        self.ticker = try container.decode(String.self, forKey: .ticker)
-        self.weburl = try container.decode(String.self, forKey: .weburl)
+        let address = try container.decode(String.self, forKey: .address)
+        let city = try container.decode(String.self, forKey: .city)
+        let country = try container.decode(String.self, forKey: .country)
+        let currency = try container.decode(String.self, forKey: .currency)
+        let cusip = try container.decode(String.self, forKey: .cusip)
+        let description = try container.decode(String.self, forKey: .description)
+        let employeeTotal = try container.decode(String.self, forKey: .employeeTotal)
+        let exchange = try container.decode(String.self, forKey: .exchange)
+        let ggroup = try container.decode(String.self, forKey: .ggroup)
+        let gind = try container.decode(String.self, forKey: .gind)
+        let gsector = try container.decode(String.self, forKey: .gsector)
+        let gsubind = try container.decode(String.self, forKey: .gsubind)
+        let ipo = try container.decode(String.self, forKey: .ipo)
+        let isin = try container.decode(String.self, forKey: .isin)
+        let marketCapitalization = try container.decode(Int.self, forKey: .marketCapitalization)
+        let naics = try container.decode(String.self, forKey: .naics)
+        let naicsNationalIndustry = try container.decode(String.self, forKey: .naicsNationalIndustry)
+        let naicsSector = try container.decode(String.self, forKey: .naicsSector)
+        let naicsSubsector = try container.decode(String.self, forKey: .naicsSubsector)
+        let name = try container.decode(String.self, forKey: .name)
+        let phone = try container.decode(String.self, forKey: .phone)
+        let sedol = try container.decode(String.self, forKey: .sedol)
+        let shareOutstanding = try container.decode(Double.self, forKey: .shareOutstanding)
+        let state = try container.decode(String.self, forKey: .state)
+        let ticker = try container.decode(String.self, forKey: .ticker)
+        let weburl = try container.decode(String.self, forKey: .weburl)
 
+        self.init(address: address, city: city, country: country, currency: currency, cusip: cusip, description: description, employeeTotal: employeeTotal, exchange: exchange, ggroup: ggroup, gind: gind, gsector: gsector, gsubind: gsubind, ipo: ipo, isin: isin, marketCapitalization: marketCapitalization, naics: naics, naicsNationalIndustry: naicsNationalIndustry, naicsSector: naicsSector, naicsSubsector: naicsSubsector, name: name, phone: phone, sedol: sedol, shareOutstanding: shareOutstanding, state: state, ticker: ticker, weburl: weburl)
     }
 }
 

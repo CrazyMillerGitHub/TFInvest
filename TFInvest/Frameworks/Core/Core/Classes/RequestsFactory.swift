@@ -16,6 +16,7 @@ public struct RequestConfig<Model, Parser: ParserProtocol> where Parser.Model ==
 public class RequestsFactory {
 
     public struct FinhubAPIRequests {
+        
         private static let TOKEN = "bpdq8nfrh5rauiikjq80"
 
         public static func availableExchangesConfig() -> RequestConfig<[AvailableExchangeModel], AvailableExchangesParser> {

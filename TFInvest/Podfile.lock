@@ -17,6 +17,7 @@ PODS:
   - News (0.0.1):
     - Kingfisher/SwiftUI
     - R.swift
+    - Services
   - R.swift (5.1.0):
     - R.swift.Library (~> 5.1.0)
   - R.swift.Library (5.1.0)
@@ -71,7 +72,7 @@ SPEC CHECKSUMS:
   Base: 8cf420445aa9a2cbcce0a16f27d8601a64d117eb
   Core: 6c864b31dec831237e5ec4446e54eb56a0e55379
   Kingfisher: d342c8354c10c3d85a27d6d4c42c41285924b898
-  News: 92d9577d42d3f872c98573bfd614222e7cfea7d7
+  News: 699d2faf5fc1b7b3c0951bb07d8563dcbe89e349
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
   Services: 8a0cd57c3e17a23ea94911e305a0c3a65e10efb9
@@ -80,4 +81,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: c46d6a73ffd87150f84160f6a8b64bee531f935c
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.0
