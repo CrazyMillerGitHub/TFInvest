@@ -8,6 +8,28 @@
 
 import UIKit
 import Stock
+import News
+import SwiftUI
+
+// MARK: - MainTabBarController
+open class MainTabBarController: UITabBarController {
+
+    open override func viewDidLoad() {
+        let firstViewController = UINavigationController(rootViewController: StockView())
+
+        firstViewController.tabBarItem = UITabBarItem(title: "Stock", image: UIImage(systemName: "checkmark.seal.fill"), tag: 0)
+
+        let postsView = PostsView()
+
+        let secondViewController = UIHostingController(rootView: postsView)
+
+        secondViewController.tabBarItem = UITabBarItem(title: "News", image: UIImage(systemName: "doc.fill"), tag: 1)
+
+        let tabBarList = [firstViewController, secondViewController]
+
+        viewControllers = tabBarList
+    }
+}
 
 open class PinView: UIViewController {
 
@@ -91,7 +113,12 @@ open class PinView: UIViewController {
         textFieldCollection.forEach { [weak self] pinTextField in
             self?.pinStackView.addArrangedSubview(pinTextField)
             pinTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+            // accessibilityIdentifier for UI Testing
+            pinTextField.accessibilityIdentifier = "pin_textfield_\(pinTextField.tag)"
         }
+        // accessibilityIdentifier for UI Testing
+        pinLabel.accessibilityIdentifier = "pin_label"
+        confirmButton.accessibilityIdentifier = "confirm_button"
     }
 
     override open func viewDidLoad() {
@@ -183,7 +210,7 @@ private extension PinView {
 
     // MARK: - Present Main View
     func presentMainView() {
-        let presentView = UINavigationController(rootViewController: StockView())
+        let presentView = MainTabBarController()
         presentView.modalPresentationStyle = .fullScreen
         DispatchQueue.main.async {
             self.present(presentView, animated: true, completion: nil)

@@ -35,7 +35,6 @@ struct ServiceAssemblyFactory: FactoryProtocol {
 }
 
 open class DIServiceContainer: Resolver {
-
     // MARK: Static Properties
 
     public static let shared = DIServiceContainer()

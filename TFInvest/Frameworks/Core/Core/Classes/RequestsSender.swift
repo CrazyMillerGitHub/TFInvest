@@ -27,6 +27,7 @@ public class RequestSender: RequestSenderProtocol {
         }
 
         let task = URLSession.shared.dataTask(with: urlRequest) { (data: Data?, _: URLResponse?, error: Error?) in
+
             if let error = error {
                 inQueue?.async {
                     completionHandler(.failure(error))

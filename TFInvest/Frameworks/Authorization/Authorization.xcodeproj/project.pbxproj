@@ -10,7 +10,10 @@
 		7405D75D2409163B008C6693 /* Authorization.h in Headers */ = {isa = PBXBuildFile; fileRef = 7405D75B2409163B008C6693 /* Authorization.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7405D78424091A1B008C6693 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7405D77924091A1B008C6693 /* MainScreen.swift */; };
 		7405D78524091A1B008C6693 /* extension+textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7405D77B24091A1B008C6693 /* extension+textField.swift */; };
+<<<<<<< HEAD
+=======
 		7405D78624091A1B008C6693 /* extension+font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7405D77C24091A1B008C6693 /* extension+font.swift */; };
+>>>>>>> master
 		7405D78724091A1B008C6693 /* extension+string.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7405D77D24091A1B008C6693 /* extension+string.swift */; };
 		7405D78824091A1B008C6693 /* extension+label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7405D77E24091A1B008C6693 /* extension+label.swift */; };
 		7405D78924091A1B008C6693 /* extension+stackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7405D77F24091A1B008C6693 /* extension+stackView.swift */; };
@@ -18,6 +21,10 @@
 		7405D78B24091A1B008C6693 /* PinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7405D78124091A1B008C6693 /* PinView.swift */; };
 		7405D78C24091A1B008C6693 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7405D78224091A1B008C6693 /* KeychainService.swift */; };
 		7405D78D24091A1B008C6693 /* SignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7405D78324091A1B008C6693 /* SignView.swift */; };
+<<<<<<< HEAD
+		74B3EB6C240D9F70000A1B53 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 74B3EB6E240D9F70000A1B53 /* Localizable.strings */; };
+=======
+>>>>>>> master
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +33,10 @@
 		7405D75C2409163B008C6693 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7405D77924091A1B008C6693 /* MainScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		7405D77B24091A1B008C6693 /* extension+textField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension+textField.swift"; sourceTree = "<group>"; };
+<<<<<<< HEAD
+=======
 		7405D77C24091A1B008C6693 /* extension+font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension+font.swift"; sourceTree = "<group>"; };
+>>>>>>> master
 		7405D77D24091A1B008C6693 /* extension+string.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension+string.swift"; sourceTree = "<group>"; };
 		7405D77E24091A1B008C6693 /* extension+label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension+label.swift"; sourceTree = "<group>"; };
 		7405D77F24091A1B008C6693 /* extension+stackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "extension+stackView.swift"; sourceTree = "<group>"; };
@@ -34,6 +44,11 @@
 		7405D78124091A1B008C6693 /* PinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinView.swift; sourceTree = "<group>"; };
 		7405D78224091A1B008C6693 /* KeychainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		7405D78324091A1B008C6693 /* SignView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignView.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
+		74B3EB6D240D9F70000A1B53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		74B3EB6F240D9F7F000A1B53 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+=======
+>>>>>>> master
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +97,10 @@
 				7405D78124091A1B008C6693 /* PinView.swift */,
 				7405D78324091A1B008C6693 /* SignView.swift */,
 				7405D75B2409163B008C6693 /* Authorization.h */,
+<<<<<<< HEAD
+				74B3EB6E240D9F70000A1B53 /* Localizable.strings */,
+=======
+>>>>>>> master
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -90,7 +109,10 @@
 			isa = PBXGroup;
 			children = (
 				7405D77B24091A1B008C6693 /* extension+textField.swift */,
+<<<<<<< HEAD
+=======
 				7405D77C24091A1B008C6693 /* extension+font.swift */,
+>>>>>>> master
 				7405D77D24091A1B008C6693 /* extension+string.swift */,
 				7405D77E24091A1B008C6693 /* extension+label.swift */,
 				7405D77F24091A1B008C6693 /* extension+stackView.swift */,
@@ -117,6 +139,10 @@
 			buildConfigurationList = 7405D7602409163B008C6693 /* Build configuration list for PBXNativeTarget "Authorization" */;
 			buildPhases = (
 				7405D7532409163B008C6693 /* Headers */,
+<<<<<<< HEAD
+				74B3EB69240D8A8B000A1B53 /* R.Swift */,
+=======
+>>>>>>> master
 				7405D7542409163B008C6693 /* Sources */,
 				7405D7552409163B008C6693 /* Frameworks */,
 				7405D7562409163B008C6693 /* Resources */,
@@ -152,6 +178,10 @@
 			knownRegions = (
 				en,
 				Base,
+<<<<<<< HEAD
+				ru,
+=======
+>>>>>>> master
 			);
 			mainGroup = 7405D74E2409163B008C6693;
 			productRefGroup = 7405D7592409163B008C6693 /* Products */;
@@ -168,11 +198,41 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
+				74B3EB6C240D9F70000A1B53 /* Localizable.strings in Resources */,
+=======
+>>>>>>> master
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+<<<<<<< HEAD
+/* Begin PBXShellScriptBuildPhase section */
+		74B3EB69240D8A8B000A1B53 /* R.Swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = R.Swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$PODS_TARGET_SRCROOT/Authorization/Classes/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+=======
+>>>>>>> master
 /* Begin PBXSourcesBuildPhase section */
 		7405D7542409163B008C6693 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -183,7 +243,10 @@
 				7405D78724091A1B008C6693 /* extension+string.swift in Sources */,
 				7405D78B24091A1B008C6693 /* PinView.swift in Sources */,
 				7405D78824091A1B008C6693 /* extension+label.swift in Sources */,
+<<<<<<< HEAD
+=======
 				7405D78624091A1B008C6693 /* extension+font.swift in Sources */,
+>>>>>>> master
 				7405D78C24091A1B008C6693 /* KeychainService.swift in Sources */,
 				7405D78424091A1B008C6693 /* MainScreen.swift in Sources */,
 				7405D78524091A1B008C6693 /* extension+textField.swift in Sources */,
@@ -193,11 +256,30 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+<<<<<<< HEAD
+/* Begin PBXVariantGroup section */
+		74B3EB6E240D9F70000A1B53 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				74B3EB6D240D9F70000A1B53 /* en */,
+				74B3EB6F240D9F7F000A1B53 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+=======
+>>>>>>> master
 /* Begin XCBuildConfiguration section */
 		7405D75E2409163B008C6693 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+<<<<<<< HEAD
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+=======
+>>>>>>> master
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -261,6 +343,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+<<<<<<< HEAD
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+=======
+>>>>>>> master
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

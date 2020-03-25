@@ -22,9 +22,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-//        let serviceContainer = ServiceContainer()
-//        let moduleContainer = ModuleContainer(serviceContainer: serviceContainer)
-//        let authAssembly = moduleContainer.authAssembly()
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.rootViewController = UserDefaults.standard.bool(forKey: "isUserRegistered") ? PinView(.authorized) : SignView()

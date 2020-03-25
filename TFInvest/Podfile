@@ -1,6 +1,7 @@
 platform :ios, '13.0'
 use_frameworks!
 
+
 pre_install do |installer|
     installer.pod_targets.flat_map do |pod_target|
         if pod_target.pod_target_srcroot.include? 'Frameworks'
@@ -14,14 +15,16 @@ pre_install do |installer|
 end
 
 target 'TFInvest' do
+  pod 'R.swift'
+  pod 'SwiftLint'
+  pod 'Kingfisher/SwiftUI'
   pod 'Base', :path => 'Frameworks/Base/'
   pod 'Services', :path => 'Frameworks/Services/'
   pod 'Authorization', :path => 'Frameworks/Authorization/'
   pod 'Core', :path => 'Frameworks/Core/'
   pod 'Assembly', :path => 'Frameworks/Assembly/'
   pod 'Stock', :path => 'Frameworks/Stock/'
-  pod 'R.swift'
-  pod 'SwiftLint'
+  pod 'News', :path => 'Frameworks/News/'
   # Pods for TFInvest
 
 end

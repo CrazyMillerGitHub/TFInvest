@@ -133,13 +133,13 @@ Pod::Spec.new do |spec|
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   spec.dependency "Base"
+  spec.dependency "News"
 
   # R.swift
 
-#  spec.dependency 'R.swift'
+  spec.dependency 'R.swift'
   spec.dependency "Services"
 
-  spec.dependency 'R.swift'
 
   generated_file_path = "Stock/Classes/R.generated.swift"
   spec.prepare_command =

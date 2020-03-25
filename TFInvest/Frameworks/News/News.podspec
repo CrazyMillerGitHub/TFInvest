@@ -15,9 +15,9 @@ Pod::Spec.new do |spec|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  spec.name         = "Core"
+  spec.name         = "News"
   spec.version      = "0.0.1"
-  spec.summary      = "A short description of Core."
+  spec.summary      = "A short description of News."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,9 +25,9 @@ Pod::Spec.new do |spec|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = <<-DESC
-  Make our Core faster
+  Make our authorization faster
                    DESC
-  spec.homepage     = "http://EXAMPLE/Core"
+  spec.homepage     = "http://EXAMPLE/News"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -79,7 +79,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :path => '.' }
+  spec.source       = { :path => '*' }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -89,10 +89,9 @@ Pod::Spec.new do |spec|
   #  For header files it will include any header in the folder.
   #  Not including the public_header_files will make all headers public.
   #
-  
-  spec.source_files = 'Core/Classes/**/*.swift'
-  spec.resources = 'Core/Classes/**/*.{storyboard,xib,xcassets,strings}'
 
+  spec.source_files = 'News/Classes/**/*.swift'
+  spec.resources = 'News/Classes/**/*.{storyboard,xib,xcassets,strings}'
 
   # spec.public_header_files = "Classes/**/*.h"
 
@@ -133,9 +132,27 @@ Pod::Spec.new do |spec|
   # spec.requires_arc = true
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
+  spec.dependency 'Kingfisher/SwiftUI'
 
-  spec.dependency "R.swift"
-  spec.dependency "Base"
+  # R.swift
 
+  spec.dependency 'R.swift'
+  spec.dependency 'Services'
+
+
+  generated_file_path = "News/Classes/R.generated.swift"
+  spec.prepare_command =
+  <<-CMD
+    touch "#{generated_file_path}"
+  CMD
+
+  r_swift_script = '"${PODS_ROOT}/R.swift/rswift" generate --disable-input-output-files-validation "${PODS_TARGET_SRCROOT}/News/Classes/R.generated.swift" --accessLevel public'
+  spec.script_phases = [
+    {
+      :name => 'R.swift',
+      :script => r_swift_script,
+      :execution_position => :before_compile
+    }
+  ]
 
 end
