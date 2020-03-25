@@ -49,7 +49,7 @@ extension UITextField {
         case .password:
             textField.textContentType = .password
             textField.tag = 2
-            textField.isSecureTextEntry = true
+            //textField.isSecureTextEntry = true
         }
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
