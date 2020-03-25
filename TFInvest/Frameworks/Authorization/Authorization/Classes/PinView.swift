@@ -17,13 +17,13 @@ open class MainTabBarController: UITabBarController {
     open override func viewDidLoad() {
         let firstViewController = UINavigationController(rootViewController: StockView())
 
-        firstViewController.tabBarItem = UITabBarItem(title: "Stock", image: nil, tag: 0)
+        firstViewController.tabBarItem = UITabBarItem(title: "Stock", image: UIImage(systemName: "checkmark.seal.fill"), tag: 0)
 
         let postsView = PostsView()
 
         let secondViewController = UIHostingController(rootView: postsView)
 
-        secondViewController.tabBarItem = UITabBarItem(title: "News", image: nil, tag: 1)
+        secondViewController.tabBarItem = UITabBarItem(title: "News", image: UIImage(systemName: "doc.fill"), tag: 1)
 
         let tabBarList = [firstViewController, secondViewController]
 

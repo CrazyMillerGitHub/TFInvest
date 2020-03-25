@@ -38,7 +38,7 @@ open class StockView: UIViewController {
         safeArea = view.layoutMarginsGuide
         view.backgroundColor = .white
         view.addSubview(tableView)
-        title = "Investt"
+        navigationController?.navigationBar.topItem?.title = "Investt"
         navigationController?.navigationBar.prefersLargeTitles = true
 
         let navBarAppearance = UINavigationBarAppearance()
@@ -95,7 +95,7 @@ open class StockView: UIViewController {
             for (_, idx) in data {
                 let view = UIHostingController(rootView: StockNews(companyIDX: idx))
                 view.modalPresentationStyle = .fullScreen
-                navigationController?.present(view, animated: true, completion: nil)
+                navigationController?.pushViewController(view, animated: true)
             }
         }
     }
