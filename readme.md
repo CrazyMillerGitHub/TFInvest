@@ -15,7 +15,9 @@ The project is using cocoapods for managing external libraries and a Gemfile for
 Install the pods
 
 ```
-pod isntall
+bundler install
+fastlane install
+pod install
 ```
 
 ### Core Dependencies
