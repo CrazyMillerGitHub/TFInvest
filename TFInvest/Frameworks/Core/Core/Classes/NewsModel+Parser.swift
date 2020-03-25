@@ -7,7 +7,9 @@
 
 import Foundation
 
-public struct NewsModel: Decodable {
+import Foundation
+
+public struct NewsModel: Identifiable {
     public let category: String
     public let datetime: Int
     public let id: Int
@@ -17,6 +19,20 @@ public struct NewsModel: Decodable {
     public let summary: String?
     public let url: String
 
+    public init(category: String, datetime: Int, id: Int, image: String, related: String?, source: String?, summary: String?, url: String) {
+        self.category = category
+        self.datetime = datetime
+        self.id = id
+        self.image = image
+        self.related = related
+        self.source = source
+        self.summary = summary
+        self.url = url
+    }
+}
+
+extension NewsModel: Decodable {
+
     enum CodingKeys: String, CodingKey {
         case category, datetime, id, image, related, source, summary, url
     }
@@ -24,14 +40,16 @@ public struct NewsModel: Decodable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
-        self.category = try container.decode(String.self, forKey: .category)
-        self.datetime = try container.decode(Int.self, forKey: .datetime)
-        self.id = try container.decode(Int.self, forKey: .id)
-        self.image = try container.decode(String.self, forKey: .image)
-        self.related = try container.decode(String.self, forKey: .related)
-        self.source = try container.decode(String.self, forKey: .source)
-        self.summary = try container.decode(String.self, forKey: .summary)
-        self.url = try container.decode(String.self, forKey: .url)
+        let category = try container.decode(String.self, forKey: .category)
+        let datetime = try container.decode(Int.self, forKey: .datetime)
+        let id = try container.decode(Int.self, forKey: .id)
+        let image = try container.decode(String.self, forKey: .image)
+        let related = try container.decode(String.self, forKey: .related)
+        let source = try container.decode(String.self, forKey: .source)
+        let summary = try container.decode(String.self, forKey: .summary)
+        let url = try container.decode(String.self, forKey: .url)
+
+        self.init(category: category, datetime: datetime, id: id, image: image, related: related, source: source, summary: summary, url: url)
     }
 }
 

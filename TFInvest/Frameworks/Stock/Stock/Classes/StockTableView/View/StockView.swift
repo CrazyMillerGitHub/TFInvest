@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftUI
+import News
 
 open class StockView: UIViewController {
 
@@ -65,6 +67,10 @@ open class StockView: UIViewController {
         self.showSpinner(onView: self.view)
         tableView.delegate = viewModel
         tableView.dataSource = viewModel
+
+        NotificationCenter.default.addObserver(self, selector: #selector(presentToNews(_:)), name:
+            Notification.Name("recieveState"), object: nil)
+
         fetchData()
     }
 
@@ -83,7 +89,19 @@ open class StockView: UIViewController {
         }
     }
 
+    // MARK: Present to news View
+    @objc func presentToNews(_ notification: Notification) {
+        if let data = notification.userInfo as? [UUID: String] {
+            for (_, idx) in data {
+                let view = UIHostingController(rootView: StockNews(companyIDX: idx))
+                view.modalPresentationStyle = .fullScreen
+                navigationController?.present(view, animated: true, completion: nil)
+            }
+        }
+    }
+
 }
+
 extension StockView: UISearchResultsUpdating, UISearchBarDelegate {
 
     public func updateSearchResults(for searchController: UISearchController) {
